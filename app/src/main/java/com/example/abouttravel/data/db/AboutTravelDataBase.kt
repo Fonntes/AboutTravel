@@ -5,22 +5,18 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.example.abouttravel.data.dao.LocalTypeDao
-import com.example.abouttravel.data.dao.LocationDao
-import com.example.abouttravel.data.dao.MediaDao
-import com.example.abouttravel.data.dao.TripDao
-import com.example.abouttravel.data.entities.Trip
-import com.example.abouttravel.data.entities.Location
-import com.example.abouttravel.data.entities.LocalType
-import com.example.abouttravel.data.entities.Media
+import com.example.abouttravel.data.dao.*
+import com.example.abouttravel.data.entities.*
 
-@Database(entities = [Trip::class, Location::class, LocalType::class, Media::class], version = 1)
+@Database(entities = [Trip::class, Location::class, LocalType::class, Media::class ,Session::class], version = 1)
 @TypeConverters(Converters::class)
 abstract class AboutTravelDataBase : RoomDatabase() {
     abstract fun tripDao(): TripDao
     abstract fun locationDao(): LocationDao
     abstract fun mediaDao(): MediaDao
     abstract fun localTypeDao(): LocalTypeDao
+
+    abstract fun SessionDao(): SessionDao
 
     companion object {
         @Volatile
