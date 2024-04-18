@@ -1,21 +1,22 @@
 package com.example.abouttravel.data.service
 
-import com.example.abouttravel.data.entities.Trip
-import com.example.abouttravel.data.repository.TripRepository
+import com.example.abouttravel.data.entities.Media
+import com.example.abouttravel.data.repository.MediaRepository
 
-class MediaService( private val tripRepository: TripRepository) {
+class MediaService( private val mediaRepository: MediaRepository) {
 
-    val allTrips = tripRepository.allTrip
+    val allMedia = mediaRepository.allMedia
 
-    suspend fun insert(trip: Trip) {
-        tripRepository.insert(trip)
+    suspend fun insert(media: Media) {
+        mediaRepository.insert(media)
     }
 
-    suspend fun update(trip: Trip) {
-        tripRepository.update(trip)
+    suspend fun update(media: Media) {
+        mediaRepository.update(media)
     }
 
-    suspend fun delete(trip: Trip) {
-        tripRepository.delete(trip)
+    suspend fun delete(media: Media) {
+        mediaRepository.delete(media)
     }
+
 }
