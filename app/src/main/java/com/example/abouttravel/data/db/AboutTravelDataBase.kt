@@ -15,8 +15,9 @@ abstract class AboutTravelDataBase : RoomDatabase() {
     abstract fun locationDao(): LocationDao
     abstract fun mediaDao(): MediaDao
     abstract fun localTypeDao(): LocalTypeDao
-
     abstract fun SessionDao(): SessionDao
+    abstract fun ratingDao(): RatingDao
+    abstract fun usersTripsDao(): UsersTripsDao
 
     companion object {
         @Volatile
