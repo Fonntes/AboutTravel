@@ -75,10 +75,10 @@
             />
 
         <Button
-            android:id="@+id/button_register_login"
+            android:id="@+id/button_login_to_register"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:text="Regista-te aqui!"
+            android:text="Regista-te"
             android:textColor="@color/hardBlue"
             android:paddingLeft="8dp"
             android:backgroundTint="@color/white"
