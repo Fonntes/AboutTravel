@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".LoginFragment">
@@ -75,14 +75,12 @@
             />
 
         <Button
-            android:id="@+id/button_register"
+            android:id="@+id/button_register_login"
             android:layout_width="100dp"
             android:layout_height="50dp"
-
-            android:text="Regista-te"
+            android:text="Regista-te aqui!"
             android:textColor="@color/hardBlue"
             android:paddingLeft="8dp"
-            android:onClick="onClickRegister"
             android:backgroundTint="@color/white"
             />
 
