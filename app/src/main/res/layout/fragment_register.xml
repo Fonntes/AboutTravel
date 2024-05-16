@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".RegisterFragment">
+    tools:context=".pages.authentication.RegisterFragment">
 
     <!--<ImageView
         android:id="@+id/image_view"
