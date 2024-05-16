@@ -20,7 +20,7 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         android:orientation="vertical"
         android:gravity="center">
 
@@ -91,10 +91,9 @@
                 />
 
             <Button
-                android:id="@+id/button_register"
+                android:id="@+id/button_register_login"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
-
                 android:text="Regista-te"
                 android:textColor="@color/hardBlue"
                 android:paddingLeft="8dp"
