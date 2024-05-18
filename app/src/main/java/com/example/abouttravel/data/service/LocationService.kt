@@ -1,25 +1,25 @@
 package com.example.abouttravel.data.service
 
-import com.example.abouttravel.data.entities.Location
+import com.example.abouttravel.data.entities.Local
 import com.example.abouttravel.data.repository.LocationRepository
 
 class LocationService(private val locationRepository: LocationRepository) {
 
     val allLocations = locationRepository.allLocations
 
-    suspend fun insert(location: Location) {
-        locationRepository.insert(location)
+    suspend fun insert(local: Local) {
+        locationRepository.insert(local)
     }
 
-    suspend fun update(location: Location) {
-        locationRepository.update(location)
+    suspend fun update(local: Local) {
+        locationRepository.update(local)
     }
 
-    suspend fun delete(location: Location) {
-        locationRepository.delete(location)
+    suspend fun delete(local: Local) {
+        locationRepository.delete(local)
     }
 
-    fun getLocationsForTrip(tripId: Int): List<Location> {
+    fun getLocationsForTrip(tripId: Int): List<Local> {
         return locationRepository.getLocationsForTrip(tripId)
     }
 }

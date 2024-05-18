@@ -5,7 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.abouttravel.data.db.AboutTravelDataBase
-import com.example.abouttravel.data.entities.Location
+import com.example.abouttravel.data.entities.Local
 import com.example.abouttravel.data.repository.LocationRepository
 import com.example.abouttravel.data.service.LocationService
 import kotlinx.coroutines.launch
@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 class LocationViewModel(application: Application) : AndroidViewModel(application) {
 
     private val locationService: LocationService
-    val allLocations: LiveData<List<Location>>
+    val allLocations: LiveData<List<Local>>
 
     init {
         val locationDao = AboutTravelDataBase.getDatabase(application).locationDao()
@@ -22,19 +22,19 @@ class LocationViewModel(application: Application) : AndroidViewModel(application
         allLocations = locationService.allLocations
     }
 
-    fun insert(location: Location) = viewModelScope.launch {
-        locationService.insert(location)
+    fun insert(local: Local) = viewModelScope.launch {
+        locationService.insert(local)
     }
 
-    fun update(location: Location) = viewModelScope.launch {
-        locationService.update(location)
+    fun update(local: Local) = viewModelScope.launch {
+        locationService.update(local)
     }
 
-    fun delete(location: Location) = viewModelScope.launch {
-        locationService.delete(location)
+    fun delete(local: Local) = viewModelScope.launch {
+        locationService.delete(local)
     }
 
-    fun getLocationsForTrip(tripId: Int): List<Location> {
+    fun getLocationsForTrip(tripId: Int): List<Local> {
         return locationService.getLocationsForTrip(tripId)
     }
 }

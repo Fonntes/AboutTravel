@@ -8,7 +8,7 @@ import androidx.room.TypeConverters
 import com.example.abouttravel.data.dao.*
 import com.example.abouttravel.data.entities.*
 
-@Database(entities = [Trip::class, Location::class, LocalType::class, Media::class ,Session::class, Rating::class, UsersTrips::class ], version = 1)
+@Database(entities = [Trip::class, Local::class, LocalType::class, Media::class ,Session::class, Rating::class, UsersTrips::class ], version = 1)
 @TypeConverters(Converters::class)
 abstract class AboutTravelDataBase : RoomDatabase() {
     abstract fun tripDao(): TripDao
