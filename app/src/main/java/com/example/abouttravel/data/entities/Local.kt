@@ -37,7 +37,6 @@ data class Local(
     @PrimaryKey(autoGenerate = true) var id: Int = 0,
     @NonNull @ColumnInfo(name = "trip_id") var tripId: Int = 0,
     @NonNull @ColumnInfo(name = "local_type_id") var localTypeId: Int = 0,
-    @NonNull @ColumnInfo(name = "rating_id") var ratingId: Int = 0,
     @NonNull @ColumnInfo(name = "name") var name: String = "",
     @NonNull @ColumnInfo(name = "latitude") var latitude: String = "",
     @NonNull @ColumnInfo(name = "longitude") var longitude: String = "",
