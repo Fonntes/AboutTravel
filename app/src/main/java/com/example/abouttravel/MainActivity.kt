@@ -12,6 +12,5 @@ class MainActivity : AppCompatActivity() {
 =======
 >>>>>>> 0df13a5f63b27afe63b365b8bad11bd446815160
         setContentView(R.layout.activity_main)
-
     }
 }
