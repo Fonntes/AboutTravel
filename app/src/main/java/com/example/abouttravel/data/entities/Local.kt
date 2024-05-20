@@ -25,12 +25,6 @@ import java.util.Date
             childColumns = ["local_type_id"],
             onDelete = ForeignKey.CASCADE
         ),
-        ForeignKey(
-            entity = Rating::class,
-            parentColumns = ["id"],
-            childColumns = ["rating_id"],
-            onDelete = ForeignKey.CASCADE
-)
     ]
 )
 data class Local(
@@ -42,7 +36,6 @@ data class Local(
     @NonNull @ColumnInfo(name = "longitude") var longitude: String = "",
     @NonNull @ColumnInfo(name = "description") var description: String = "",
     @NonNull @ColumnInfo(name = "date") var date: Date = Date(),
-    @NonNull @ColumnInfo(name = "rating") var rating: Int = 0,
     @NonNull @ColumnInfo(name = "created_at") var createdAt: Date = Date(),
     @NonNull @ColumnInfo(name = "updated_at") var updatedAt: Date = Date(),
     @NonNull @ColumnInfo(name = "delete_at") var deleteAt: Date = Date()
