@@ -33,7 +33,7 @@ import java.util.Date
     ]
 )
 data class Rating(
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") var Id: Int = 0,
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") var id: Int = 0,
     @NonNull @ColumnInfo(name = "user_id") var userId: Int = 0,
     @NonNull @ColumnInfo(name = "trip_id") var tripId: Int = 0,
     @NonNull @ColumnInfo(name = "local_id") var localId: Int = 0,
