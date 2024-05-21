@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:gravity="center"
-        android:text="Iniciar Sessão"
+        android:text="@string/Login"
         android:textSize="40sp"
         />
 
@@ -29,7 +29,7 @@
         android:id="@+id/nameField"
         android:layout_width="260dp"
         android:layout_height="56dp"
-        android:hint="Nome:"
+        android:hint="@string/Name"
         android:textSize="20sp"
         android:paddingStart="8dp"
         android:background="@color/grey"
@@ -41,7 +41,7 @@
         android:id="@+id/passField"
         android:layout_width="260dp"
         android:layout_height="56dp"
-        android:hint="Palavra-passe:"
+        android:hint="@string/Password"
         android:textSize="20sp"
         android:paddingStart="8dp"
         android:background="@color/grey"
@@ -53,7 +53,7 @@
         android:id="@+id/buttonLoginToHome"
         android:layout_width="200dp"
         android:layout_height="56dp"
-        android:text="Entrar"
+        android:text="@string/Enter"
         android:textSize="28sp"
         android:backgroundTint="@color/blue"
         android:layout_marginBottom="12dp"
@@ -68,20 +68,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Não tens uma conta: "
-            android:layout_marginEnd="-4dp"
             android:layout_marginStart="16dp"
-            />
+            android:layout_marginEnd="-4dp"
+            android:text="@string/Dont_have_account" />
 
         <Button
+            android:id="@+id/button_login_to_register"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:text="Regista-te"
-            android:id="@+id/button_login_to_register"
-            android:textColor="@color/hardBlue"
-            android:paddingLeft="8dp"
             android:backgroundTint="@color/white"
-            />
+            android:paddingLeft="8dp"
+            android:text="@string/Register"
+            android:textColor="@color/hardBlue" />
 
     </LinearLayout>
 

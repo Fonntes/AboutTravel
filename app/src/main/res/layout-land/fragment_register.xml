@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
             android:gravity="center"
-            android:text="Register"
+            android:text="@string/Register"
             android:textSize="40sp" />
 
         <LinearLayout
@@ -41,7 +41,7 @@
                 android:id="@+id/nameField"
                 android:layout_width="260dp"
                 android:layout_height="56dp"
-                android:hint="Nome:"
+                android:hint="@string/Name"
                 android:textSize="20sp"
                 android:paddingStart="8dp"
                 android:background="@color/grey"
@@ -54,7 +54,7 @@
                 android:id="@+id/passField"
                 android:layout_width="260dp"
                 android:layout_height="56dp"
-                android:hint="Palavra-passe:"
+                android:hint="@string/Password"
                 android:textSize="20sp"
                 android:paddingStart="8dp"
                 android:background="@color/grey"
@@ -74,7 +74,7 @@
                 android:id="@+id/emailField"
                 android:layout_width="260dp"
                 android:layout_height="56dp"
-                android:hint="Email:"
+                android:hint="@string/Email"
                 android:textSize="20sp"
                 android:paddingStart="8dp"
                 android:background="@color/grey"
@@ -87,7 +87,7 @@
                 android:id="@+id/confirmPassField"
                 android:layout_width="260dp"
                 android:layout_height="56dp"
-                android:hint="Palavra-passe:"
+                android:hint="@string/Confirm_Password"
                 android:textSize="20sp"
                 android:paddingStart="8dp"
                 android:background="@color/grey"
@@ -100,7 +100,7 @@
             android:id="@+id/buttonRegister"
             android:layout_width="200dp"
             android:layout_height="56dp"
-            android:text="Entrar"
+            android:text="@string/Register"
             android:textSize="28sp"
             android:backgroundTint="@color/blue"
             android:layout_marginBottom="12dp"
@@ -115,7 +115,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Não tens uma conta: "
+                android:text="@string/Already_Have_Account"
                 android:layout_marginEnd="-4dp"
                 android:layout_marginStart="16dp"
                 />
@@ -124,8 +124,7 @@
                 android:id="@+id/button_register_to_login"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
-
-                android:text="Regista-te"
+                android:text="@string/Login"
                 android:textColor="@color/hardBlue"
                 android:paddingLeft="8dp"
                 android:onClick="onClickRegister"

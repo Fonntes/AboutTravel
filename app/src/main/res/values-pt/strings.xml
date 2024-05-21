@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AboutTravel</string>
+    <string name="Share">Partilhar</string>
+    <string name="Profile">Perfil</string>
+    <string name="My_Travels">As Minhas Viagens</string>
+    <string name="Login">Iniciar Sessão</string>
+    <string name="Name">Nome:</string>
+    <string name="Password">Palavra-Passe:</string>
+    <string name="Enter">Entrar</string>
+    <string name="Dont_have_account">Não tens conta:</string>
+    <string name="Register">Registar</string>
+    <string name="Confirm_Password">Confirma Palavra-Passe:</string>
+    <string name="Already_Have_Account">Já tens conta:</string>
 </resources>
