@@ -12,4 +12,8 @@
     <string name="Register">Registar</string>
     <string name="Confirm_Password">Confirma Palavra-Passe:</string>
     <string name="Already_Have_Account">Já tens conta:</string>
+    <string name="profile">Perfil</string>
+    <string name="Username">Nome de Utilizador:</string>
+    <string name="Description">Descrição:</string>
+    <string name="Number">Numero:</string>
 </resources>

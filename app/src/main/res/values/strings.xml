@@ -19,4 +19,8 @@
     <string name="Email" translatable="false">Email:</string>
     <string name="Confirm_Password">Confirm Password</string>
     <string name="Already_Have_Account">Already have an account:</string>
+    <string name="profile">Profile</string>
+    <string name="Username">Username:</string>
+    <string name="Description">Description:</string>
+    <string name="Number">Number:</string>
 </resources>

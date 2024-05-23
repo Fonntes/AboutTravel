@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".pages.home.ProfileFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#48C9B0"
+                tools:ignore="MissingConstraints"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:src="@drawable/add"
+                app:layout_constraintBottom_toBottomOf="@id/toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/toolbar" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="-24dp"
+                    android:text="@string/Profile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <ImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:background="@color/blue"
+                    android:layout_marginTop="48dp"
+                    app:shapeAppearanceOverlay="@style/circular"
+                    />
+
+                <EditText
+                    android:id="@+id/nameField"
+                    android:layout_width="260dp"
+                    android:layout_height="56dp"
+                    android:background="@color/grey"
+                    android:elevation="4dp"
+                    android:hint="@string/Name"
+                    android:layout_marginTop="28dp"
+                    android:paddingStart="8dp"
+                    android:textSize="20sp"
+                    />
+
+                <EditText
+                    android:id="@+id/usernameField"
+                    android:layout_width="260dp"
+                    android:layout_height="56dp"
+                    android:background="@color/grey"
+                    android:elevation="4dp"
+                    android:hint="@string/Username"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="8dp"
+                    android:textSize="20sp"
+                    />
+
+                <EditText
+                    android:id="@+id/numberField"
+                    android:layout_width="260dp"
+                    android:layout_height="56dp"
+                    android:background="@color/grey"
+                    android:elevation="4dp"
+                    android:hint="@string/Number"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="8dp"
+                    android:textSize="20sp"
+                    />
+
+                <EditText
+                    android:id="@+id/emailField"
+                    android:layout_width="260dp"
+                    android:layout_height="56dp"
+                    android:background="@color/grey"
+                    android:elevation="4dp"
+                    android:hint="@string/Email"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="8dp"
+                    android:textSize="20sp"
+                    />
+
+                <EditText
+                    android:id="@+id/descriptionField"
+                    android:layout_width="260dp"
+                    android:layout_height="168dp"
+                    android:background="@color/grey"
+                    android:elevation="4dp"
+                    android:hint="@string/Description"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="8dp"
+                    android:textSize="20sp"
+                    />
+            </LinearLayout>
+    </FrameLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#48C9B0"
+        app:menu="@menu/navbar"
+        android:gravity="bottom"/>
+
+</LinearLayout>
