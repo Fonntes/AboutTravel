@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigationcreatetravel"
+    app:startDestination="@id/homeFragment2">
+
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.example.abouttravel.pages.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_createTravelFragment"
+            app:destination="@id/createTravelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createTravelFragment"
+        android:name="com.example.abouttravel.pages.Travel.CreateTravelFragment"
+        android:label="fragment_create_travel"
+        tools:layout="@layout/fragment_create_travel" >
+        <action
+            android:id="@+id/action_createTravelFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+</navigation>

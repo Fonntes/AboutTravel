@@ -17,6 +17,25 @@ class ProfileFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
 
+        val bottomNavigationView = view.findViewById<BottomNavigationView>(R.id.navbar)
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+
+                R.id.home -> {
+                    findNavController().navigate(R.id.action_profileFragment_to_homeFragment)
+                    true
+                }
+
+                R.id.share -> {
+                    findNavController().navigate(R.id.action_profileFragment_to_shareFragment)
+                    true
+                }
+
+                else -> false
+            }
+        }
+
         return view
     }
 }

@@ -16,4 +16,10 @@
     <string name="Username">Nome de Utilizador:</string>
     <string name="Description">Descrição:</string>
     <string name="Number">Numero:</string>
+    <string name="My_Shared">Partilhadas comigo</string>
+    <string name="CreateTravel">Adicionar Viajem</string>
+    <string name="InitialDate">Data inicio:</string>
+    <string name="FinalDate">Data final:</string>
+    <string name="Localization">Localização:</string>
+    <string name="Classification">Classificação:</string>
 </resources>

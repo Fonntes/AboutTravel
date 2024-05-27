@@ -21,8 +21,13 @@ class HomeFragment : Fragment() {
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
+
+                R.id.share -> {
+                    findNavController().navigate(R.id.action_homeFragment_to_shareFragment)
+                    true
+                }
+
                 R.id.profile -> {
-                    // Handle profile navigation
                     findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
                     true
                 }
