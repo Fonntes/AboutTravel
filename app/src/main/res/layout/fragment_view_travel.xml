@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".pages.Travel.ViewTravelFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#48C9B0"
+                tools:ignore="MissingConstraints"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:src="@drawable/add"
+                app:layout_constraintBottom_toBottomOf="@id/toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/toolbar" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="48dp"
+                android:background="@color/blue"
+                app:shapeAppearanceOverlay="@style/circular" />
+
+            <EditText
+                android:id="@+id/nameField"
+                android:layout_width="260dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="28dp"
+                android:background="@color/grey"
+                android:elevation="4dp"
+                android:hint="@string/Name"
+                android:paddingStart="8dp"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/usernameField"
+                android:layout_width="260dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/grey"
+                android:elevation="4dp"
+                android:hint="@string/Username"
+                android:paddingStart="8dp"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/numberField"
+                android:layout_width="260dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/grey"
+                android:elevation="4dp"
+                android:hint="@string/Number"
+                android:paddingStart="8dp"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/emailField"
+                android:layout_width="260dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/grey"
+                android:elevation="4dp"
+                android:hint="@string/Email"
+                android:paddingStart="8dp"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/descriptionFieldq"
+                android:layout_width="260dp"
+                android:layout_height="168dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/grey"
+                android:elevation="4dp"
+                android:hint="@string/Description"
+                android:paddingStart="8dp"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/descriptionFieldw"
+                android:layout_width="260dp"
+                android:layout_height="168dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/grey"
+                android:elevation="4dp"
+                android:hint="@string/Description"
+                android:paddingStart="8dp"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/descriptionField3"
+                android:layout_width="260dp"
+                android:layout_height="168dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/grey"
+                android:elevation="4dp"
+                android:hint="@string/Description"
+                android:paddingStart="8dp"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/tabbar"
+        layout="@layout/tabbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</LinearLayout>

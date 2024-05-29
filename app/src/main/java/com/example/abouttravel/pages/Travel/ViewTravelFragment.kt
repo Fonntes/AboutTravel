@@ -1,4 +1,4 @@
-package com.example.abouttravel.pages.home
+package com.example.abouttravel.pages.Travel
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,26 +9,28 @@ import androidx.navigation.fragment.findNavController
 import com.example.abouttravel.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class HomeFragment : Fragment() {
+
+class ViewTravelFragment : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_view_travel, container, false)
 
         val bottomNavigationView = view.findViewById<BottomNavigationView>(R.id.navbar)
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
 
-                R.id.share -> {
-                    findNavController().navigate(R.id.action_homeFragment_to_viewTravelFragment2)
+                R.id.home -> {
+                    findNavController().navigate(R.id.action_shareFragment_to_homeFragment)
                     true
                 }
 
                 R.id.profile -> {
-                    findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
+                    findNavController().navigate(R.id.action_shareFragment_to_profileFragment)
                     true
                 }
                 else -> false
@@ -37,4 +39,5 @@ class HomeFragment : Fragment() {
 
         return view
     }
+
 }

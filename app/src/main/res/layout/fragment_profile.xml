@@ -36,7 +36,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
@@ -130,7 +130,7 @@
                     android:textSize="20sp"
                     />
             </LinearLayout>
-    </FrameLayout>
+    </LinearLayout>
 
 
     <include
