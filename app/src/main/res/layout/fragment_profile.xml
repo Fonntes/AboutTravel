@@ -133,12 +133,11 @@
     </FrameLayout>
 
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navbar"
+    <include
+        android:id="@+id/tabbar"
+        layout="@layout/tabbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#48C9B0"
-        app:menu="@menu/navbar"
-        android:gravity="bottom"/>
+        android:layout_alignParentBottom="true" />
 
 </LinearLayout>
