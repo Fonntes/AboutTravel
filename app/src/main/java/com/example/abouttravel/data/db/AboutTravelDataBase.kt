@@ -8,16 +8,17 @@ import androidx.room.TypeConverters
 import com.example.abouttravel.data.dao.*
 import com.example.abouttravel.data.entities.*
 
-@Database(entities = [Trip::class, Local::class, LocalType::class, Media::class ,Session::class, Rating::class, UsersTrips::class ], version = 1)
+@Database(entities = [Trip::class, Local::class, LocalType::class, Media::class ,Session::class, UserTripShared::class, UserTripRatings::class, UserLocalRatings::class ], version = 1)
 @TypeConverters(Converters::class)
 abstract class AboutTravelDataBase : RoomDatabase() {
     abstract fun tripDao(): TripDao
     abstract fun locationDao(): LocationDao
     abstract fun mediaDao(): MediaDao
     abstract fun localTypeDao(): LocalTypeDao
-    abstract fun SessionDao(): SessionDao
-    abstract fun ratingDao(): RatingDao
-    abstract fun usersTripsDao(): UsersTripsDao
+    abstract fun sessionDao(): SessionDao
+    abstract fun userTripSharedDao(): UserTripSharedDao
+    abstract fun userTripRatingsDao(): UserTripRatingsDao
+    abstract fun userLocalRatingsDao(): UserLocalRatingsDao
 
     companion object {
         @Volatile
