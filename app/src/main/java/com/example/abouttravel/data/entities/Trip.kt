@@ -10,16 +10,27 @@ import kotlinx.parcelize.Parcelize
 import java.util.Date
 
 @Parcelize
-@Entity(tableName = "trips")
+@Entity(tableName = "trips",
+    foreignKeys = [
+        ForeignKey(
+            entity = Session::class,
+            parentColumns = ["id"],
+            childColumns = ["user_id"],
+            onDelete = ForeignKey.CASCADE
+        )
+    ]
+)
+
+
 data class Trip(
     @PrimaryKey(autoGenerate = true) var id: Int = 0,
     @NonNull @ColumnInfo(name = "user_id") var userId: Int = 0,
-    @NonNull @ColumnInfo(name = "name") var title: String = "",
+    @NonNull @ColumnInfo(name = "label") var title: String = "",
     @NonNull @ColumnInfo(name = "country") var country: String = "",
     @NonNull @ColumnInfo(name = "location") var location: String = "",
     @NonNull @ColumnInfo(name = "date") var date: Date = Date(),
     @NonNull @ColumnInfo(name = "description") var description: String ="",
-    @NonNull @ColumnInfo(name = "file_path") var imagen: String = "",
+    @NonNull @ColumnInfo(name = "file_path") var image: String = "",
     @NonNull @ColumnInfo(name = "latitude") var latitude: String = "",
     @NonNull @ColumnInfo(name = "longitude") var longitude: String = "",
     @NonNull @ColumnInfo(name = "is_shared") var isShared: Boolean = false,

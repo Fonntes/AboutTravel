@@ -17,7 +17,7 @@ class SessionViewModel(application: Application) : AndroidViewModel(application)
     val Session: Session
 
     init {
-        val sessionDao = AboutTravelDataBase.getDatabase(application).SessionDao()
+        val sessionDao = AboutTravelDataBase.getDatabase(application).sessionDao()
         val sessionRepository = SessionRepository(sessionDao)
         sessionService = SessionService(sessionRepository)
         Session = sessionService.Session

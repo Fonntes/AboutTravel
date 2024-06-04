@@ -12,7 +12,7 @@ import java.util.Date
 @Entity(tableName = "local_types")
 data class LocalType(
     @PrimaryKey(autoGenerate = true) var id: Int = 0,
-    @NonNull @ColumnInfo(name = "name") var name: String = "",
+    @NonNull @ColumnInfo(name = "label") var label: String = "",
     @NonNull @ColumnInfo(name = "description") var description: String = "",
     @NonNull @ColumnInfo(name = "created_at") var createdAt: Date = Date(),
     @NonNull @ColumnInfo(name = "updated_at") var updatedAt: Date = Date()

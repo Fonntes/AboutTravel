@@ -7,10 +7,9 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
-import java.util.Date
 
 @Parcelize
-@Entity(tableName = "ratings",
+@Entity(tableName = "userTripShared",
     foreignKeys = [
         ForeignKey(
             entity = Session::class,
@@ -19,26 +18,15 @@ import java.util.Date
             onDelete = ForeignKey.CASCADE
         ),
         ForeignKey(
-                entity = Trip::class,
+            entity = Trip::class,
             parentColumns = ["id"],
             childColumns = ["trip_id"],
-            onDelete = ForeignKey.CASCADE
-        ),
-        ForeignKey(
-            entity = Local::class,
-            parentColumns = ["id"],
-            childColumns = ["local_id"],
             onDelete = ForeignKey.CASCADE
         )
     ]
 )
-data class Rating(
+data class UserTripShared(
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") var id: Int = 0,
     @NonNull @ColumnInfo(name = "user_id") var userId: Int = 0,
-    @NonNull @ColumnInfo(name = "trip_id") var tripId: Int = 0,
-    @NonNull @ColumnInfo(name = "local_id") var localId: Int = 0,
-    @NonNull @ColumnInfo(name = "rating") var rating: Int = 0,
-    @NonNull @ColumnInfo(name = "created_at") var createdAt: Date = Date(),
-    @NonNull @ColumnInfo(name = "updated_at") var updatedAt: Date = Date(),
-    @NonNull @ColumnInfo(name = "deleted_at") var deletedAt: Date = Date()
+    @NonNull @ColumnInfo(name = "trip_id") var tripId: Int = 0
 ) : Parcelable

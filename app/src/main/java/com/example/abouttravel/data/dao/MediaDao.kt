@@ -13,10 +13,10 @@ interface MediaDao {
     @Insert
     suspend fun insertMedia(media: Media): Long
 
-    @Query("SELECT * FROM medias")
+    @Query("SELECT * FROM media")
     fun getAllMedias(): LiveData<List<Media>>
 
-    @Query("SELECT * FROM medias WHERE id = :id")
+    @Query("SELECT * FROM media WHERE id = :id")
     fun getMediaById(id: Int): Media
 
     @Update
