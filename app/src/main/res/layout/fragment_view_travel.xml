@@ -226,19 +226,26 @@
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:text="Bios:"
+                        android:layout_marginRight="20dp"
                         android:layout_marginTop="28dp"
                         android:textSize="20sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
             <TextView
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bios:"
-                android:layout_marginTop="28dp"
+                android:text="BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA  BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA"
+                android:padding="32dp"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+        </LinearLayout>
 
             <EditText
                 android:id="@+id/usernameField"
