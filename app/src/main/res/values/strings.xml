@@ -29,4 +29,9 @@
     <string name="FinalDate">Final Date</string>
     <string name="Localization">Localization:</string>
     <string name="Classification">Classification:</string>
+    <string name="Definition">Definition</string>
+    <string name="Sobrenos">About us</string>
+    <string name="Language">Language</string>
+    <string name="AssociatedAccount">Associated account</string>
+    <string name="Logout">Logout</string>
 </resources>

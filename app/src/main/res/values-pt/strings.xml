@@ -22,4 +22,9 @@
     <string name="FinalDate">Data final:</string>
     <string name="Localization">Localização:</string>
     <string name="Classification">Classificação:</string>
+    <string name="Definition">Definições</string>
+    <string name="Sobrenos">Sobre nós</string>
+    <string name="Language">Linguagem</string>
+    <string name="AssociatedAccount">Conta associada</string>
+    <string name="Logout">Sair</string>
 </resources>

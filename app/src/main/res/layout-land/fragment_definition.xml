@@ -26,14 +26,15 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
                 android:scaleX="1.5"
                 android:scaleY="1.5"
-                android:src="@drawable/add"
-                app:layout_constraintBottom_toBottomOf="@id/toolbar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/toolbar" />
+                android:src="@drawable/menu"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="957dp"
+                tools:layout_editor_absoluteY="12dp" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
@@ -64,7 +65,7 @@
                 android:id="@+id/Sobrenos"
                 android:layout_width="200dp"
                 android:layout_height="56dp"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="24dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/Sobrenos"
                 android:textColor="@color/black"
@@ -74,7 +75,7 @@
                 android:id="@+id/Language"
                 android:layout_width="200dp"
                 android:layout_height="56dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="8dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/Language"
                 android:textColor="@color/black"
@@ -84,37 +85,24 @@
                 android:id="@+id/AssociatedAccount"
                 android:layout_width="200dp"
                 android:layout_height="56dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="8dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/AssociatedAccount"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
+            <Button
+                android:id="@+id/Logout"
+                android:layout_width="200dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/red"
+                android:text="@string/Logout"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center|top"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/Logout"
-            android:layout_width="200dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="32dp"
-            android:backgroundTint="@color/red"
-            android:text="@string/Logout"
-            android:textColor="@color/white"
-            android:textSize="24sp" />
-    </LinearLayout>
-
-    <include
-        android:id="@+id/tabbar"
-        layout="@layout/tabbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
 
 </LinearLayout>
