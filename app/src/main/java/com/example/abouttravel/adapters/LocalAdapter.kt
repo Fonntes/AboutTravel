@@ -19,7 +19,7 @@ class LocalAdapter(
 ) : RecyclerView.Adapter<LocalAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.sitios_adapter, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.places_adapter, parent, false)
         return MyViewHolder(itemView)
     }
 
@@ -31,9 +31,7 @@ class LocalAdapter(
         holder.localLabel.text = local.label
         holder.rating.text = localRating?.rating?.toString() ?: "No rating"
         localMedia?.let {
-            Picasso.get()
-                .load(it.path)
-                .into(holder.image)
+            Picasso.get().load(it.path).into(holder.image)
         }
     }
 

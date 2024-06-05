@@ -52,11 +52,11 @@
         >
 
         <TextView
-            android:layout_width="70dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"
-            android:text="@string/Home"
+            android:text="@string/My_Travels"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -73,107 +73,10 @@
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
-                <LinearLayout
-                    android:id="@+id/section1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:orientation="vertical"
-                    android:layout_margin="4dp"
-                    android:background="@color/white"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_launcher_background" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginTop="4dp"
-                        android:text="Título 1"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1 sitio"
-                        android:textSize="14sp"
-                        android:layout_gravity="left"
-                        />
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:id="@+id/section2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:orientation="vertical"
-                    android:layout_margin="4dp"
-                    android:background="@color/white"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_launcher_background" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginTop="4dp"
-                        android:text="Título 1"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1 sitio"
-                        android:textSize="14sp"
-                        android:layout_gravity="left"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/section3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:orientation="vertical"
-                    android:layout_margin="4dp"
-                    android:background="@color/white"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_launcher_background" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginTop="4dp"
-                        android:text="Título 1"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1 sitio"
-                        android:textSize="14sp"
-                        android:layout_gravity="left"
-                        />
-                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
             </GridLayout>
         </LinearLayout>

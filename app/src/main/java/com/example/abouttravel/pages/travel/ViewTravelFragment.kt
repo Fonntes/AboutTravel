@@ -5,12 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.abouttravel.R
-import com.example.abouttravel.data.db.AboutTravelDataBase
 import com.example.abouttravel.adapters.LocalAdapter
+import com.example.abouttravel.data.dao.LocationDao
 import com.example.abouttravel.data.entities.Local
 import com.example.abouttravel.data.entities.Media
 import com.example.abouttravel.data.entities.UserLocalRatings
@@ -20,7 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class ViewTravelFragment : Fragment() {
 
     private lateinit var binding: FragmentViewTravelBinding
-    private lateinit var localAdapter: LocalAdapter
+    private lateinit var locationDao: LocationDao
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +35,7 @@ class ViewTravelFragment : Fragment() {
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
+
                 R.id.home -> {
                     findNavController().navigate(R.id.action_shareFragment_to_homeFragment)
                     true
@@ -53,25 +53,14 @@ class ViewTravelFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        val database = AboutTravelDataBase.getDatabase(requireContext())
-        val localDao = database.locationDao()
-        val mediaDao = database.mediaDao()
-        val userLocalRatingsDao = database.userLocalRatingsDao()
+        val locals: List<Local> = listOf()
+        val media: List<Media> = listOf()
+        val ratings: List<UserLocalRatings> = listOf()
 
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.setHasFixedSize(true)
-
-        localAdapter = LocalAdapter()
-
-        binding.recyclerView.adapter = localAdapter
-
-        // Use lifecycleScope para operações assíncronas
-        lifecycleScope.launchWhenStarted {
-            val locals: List<Local> = localDao.getAllLocations()
-            val media: List<Media> = mediaDao.getAllMedias()
-            val ratings: List<UserLocalRatings> = userLocalRatingsDao.getAllRatings()
-
-                localAdapter.setData(locals, media, ratings)
-        }
+        // Suponha que seu Adapter tenha um construtor que espera os dados
+        binding.recyclerView.adapter = LocalAdapter(locals, media, ratings)
     }
+
 }
