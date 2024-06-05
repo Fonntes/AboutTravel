@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/createTravelFragment"
-        android:name="com.example.abouttravel.pages.Travel.CreateTravelFragment"
+        android:name="com.example.abouttravel.pages.travel.CreateTravelFragment"
         android:label="fragment_create_travel"
         tools:layout="@layout/fragment_create_travel" >
         <action

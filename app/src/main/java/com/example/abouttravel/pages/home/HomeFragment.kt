@@ -23,7 +23,7 @@ class HomeFragment : Fragment() {
             when (item.itemId) {
 
                 R.id.share -> {
-                    findNavController().navigate(R.id.action_homeFragment_to_viewTravelFragment2)
+                    findNavController().navigate(R.id.action_homeFragment_to_shareFragment)
                     true
                 }
 

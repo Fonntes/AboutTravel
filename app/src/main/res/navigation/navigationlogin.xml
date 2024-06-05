@@ -28,7 +28,7 @@
     </fragment>
     <activity
         android:id="@+id/homeActivity"
-        android:name="com.example.abouttravel.pages.Travel.HomeActivity"
+        android:name="com.example.abouttravel.pages.travel.HomeActivity"
         android:label="activity_home"
         tools:layout="@layout/activity_home" />
 </navigation>

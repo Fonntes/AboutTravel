@@ -1,4 +1,4 @@
-package com.example.abouttravel.pages.Travel
+package com.example.abouttravel.pages.travel
 
 import android.os.Bundle
 import android.view.LayoutInflater
