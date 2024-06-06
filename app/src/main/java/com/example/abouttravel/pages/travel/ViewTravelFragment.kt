@@ -59,7 +59,6 @@ class ViewTravelFragment : Fragment() {
 
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.setHasFixedSize(true)
-        // Suponha que seu Adapter tenha um construtor que espera os dados
         binding.recyclerView.adapter = LocalAdapter(locals, media, ratings)
     }
 

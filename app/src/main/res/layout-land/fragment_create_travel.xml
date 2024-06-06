@@ -155,13 +155,7 @@
                 android:layout_marginBottom="-70dp"
                 android:background="@color/blue" />
 
-            <Button
-                android:id="@+id/saveButton"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginLeft="190dp"
-                android:layout_marginBottom="32dp"
-                android:backgroundTint="@color/softBlue" />
+
 
         </LinearLayout>
 

@@ -15,25 +15,30 @@ class CreateTravelFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val view = inflater.inflate(R.layout.fragment_definition, container, false)
-
+        val view = inflater.inflate(R.layout.fragment_create_travel, container, false)
         val bottomNavigationView = view.findViewById<BottomNavigationView>(R.id.navbar)
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
 
                 R.id.home -> {
-                    findNavController().navigate(R.id.action_shareFragment_to_homeFragment)
+                    findNavController().navigate(R.id.action_createTravelFragment2_to_homeFragment)
+                    true
+                }
+
+                R.id.share -> {
+                    findNavController().navigate(R.id.action_createTravelFragment2_to_shareFragment)
                     true
                 }
 
                 R.id.profile -> {
-                    findNavController().navigate(R.id.action_shareFragment_to_profileFragment)
+                    findNavController().navigate(R.id.action_createTravelFragment2_to_profileFragment)
                     true
                 }
                 else -> false
             }
         }
+
 
         return view
     }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.abouttravel.R
 
@@ -23,10 +24,11 @@ class RegisterFragment : Fragment() {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment2)
         }*/
 
-        val button = view.findViewById<Button>(R.id.button_register_to_login)
+        val button = view.findViewById<TextView>(R.id.register_to_login)
         button.setOnClickListener{
             findNavController().navigate(R.id.action_registerFragment2_to_loginFragment)
         }
+
 
         return view
     }
