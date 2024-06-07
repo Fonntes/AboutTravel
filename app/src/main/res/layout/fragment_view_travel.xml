@@ -8,7 +8,6 @@
     android:orientation="vertical"
     tools:context=".pages.travel.ViewTravelFragment">
 
-    <!-- AppBar -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
@@ -18,30 +17,49 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- Toolbar -->
             <Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#48C9B0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginEnd="48dp"
+                android:scaleType="center"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:src="@mipmap/logo_3_foreground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/toolbar"
+                app:layout_constraintStart_toEndOf="@+id/back"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/back"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- Add Button -->
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:scaleX="1.5"
-                android:scaleY="1.5"
-                android:src="@drawable/add"
-                app:layout_constraintBottom_toBottomOf="@id/toolbar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/toolbar" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- Profile Section (outside ScrollView) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -198,46 +216,40 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center">
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical" >
                     <TextView
-                        android:layout_width="170dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Bios:"
-                        android:layout_marginTop="28dp"
+                        android:layout_marginStart="24dp"
+                        android:text="Bio:"
                         android:textSize="20sp"
                         android:textStyle="bold" />
-
                 </LinearLayout>
 
-                <!-- Send Button -->
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="right|center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <Button
                         android:id="@+id/sendButton"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_marginTop="28dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginEnd="24dp"
                         android:backgroundTint="@color/softBlue"
                         android:drawableTop="@drawable/send"
-                        android:padding="10dp" />
+                        android:padding="10dp"/>
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Description Section -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -248,8 +260,8 @@
                     android:layout_height="wrap_content"
                     android:text="BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA  BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA"
                     android:padding="32dp"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
             </LinearLayout>
 
             <!-- Places Section -->
@@ -275,7 +287,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom TabBar -->
     <include
         android:id="@+id/tabbar"
         layout="@layout/tabbar"

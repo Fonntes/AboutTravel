@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.abouttravel.R
@@ -17,6 +18,12 @@ class ShareFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_share, container, false)
+
+        val add = view.findViewById<ImageView>(R.id.addTravel)
+
+        add.setOnClickListener{
+            findNavController().navigate(R.id.action_shareFragment_to_createTravelFragment2)
+        }
 
         val bottomNavigationView = view.findViewById<BottomNavigationView>(R.id.navbar)
 
