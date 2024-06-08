@@ -41,7 +41,7 @@
                 app:layout_constraintStart_toStartOf="@+id/toolbar"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
-            
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -71,6 +71,7 @@
                     android:textSize="24sp"
                     android:textStyle="bold"
                     android:layout_marginTop="12dp"
+                    android:textColor="@color/black"
                     android:text="@string/CreateTravel"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +83,6 @@
                     android:layout_height="56dp"
                     android:background="@drawable/rounded_corners"
                     android:elevation="4dp"
-
                     android:textColorHint="@android:color/black"
                     android:textColor="@android:color/black"
                     android:hint="@string/Name"
@@ -161,7 +161,8 @@
                     android:textSize="24sp"
                     android:textStyle="bold"
                     android:layout_marginTop="16dp"
-                    android:text="@string/CreateTravel"
+                    android:textColor="@color/black"
+                    android:text="@string/AddImage"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -170,9 +171,9 @@
                     android:id="@+id/profileImage"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
-                    android:background="@color/blue"
                     android:layout_marginTop="12dp"
-                    app:shapeAppearanceOverlay="@style/circular"
+                    android:backgroundTint="@color/blue"
+                    android:background="@drawable/rounded_corners"
                     android:layout_marginBottom="-50dp" />
 
                 <Button

@@ -77,8 +77,8 @@
                 android:layout_width="160dp"
                 android:layout_height="160dp"
                 android:layout_marginTop="48dp"
-                android:background="@color/blue"
-                app:shapeAppearanceOverlay="@style/circular" />
+                android:backgroundTint="@color/blue"
+                android:background="@drawable/rounded_corners"/>
         </LinearLayout>
 
         <LinearLayout
@@ -258,7 +258,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA  BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA"
+                    android:text="BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA"
                     android:padding="32dp"
                     android:textSize="16sp"
                     android:textStyle="normal" />

@@ -92,20 +92,19 @@
                     android:id="@+id/profileImage"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
-                    android:background="@color/blue"
                     android:layout_marginTop="48dp"
-                    app:shapeAppearanceOverlay="@style/circular" />
+                    android:background="@drawable/circle_blue" />
 
                 <TextView
                     android:id="@+id/nameField"
                     android:layout_width="260dp"
                     android:layout_height="56dp"
+                    android:layout_marginTop="28dp"
                     android:background="@drawable/rounded_corners"
                     android:textColorHint="@android:color/black"
                     android:textColor="@android:color/black"
                     android:elevation="4dp"
                     android:hint="@string/Name"
-                    android:layout_marginTop="28dp"
                     android:paddingStart="8dp"
                     android:textSize="24sp"
                     android:gravity="center_vertical"/>

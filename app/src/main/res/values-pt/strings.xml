@@ -27,4 +27,5 @@
     <string name="Language">Linguagem</string>
     <string name="AssociatedAccount">Conta associada</string>
     <string name="Logout">Sair</string>
+    <string name="AddImage">Adicionar Imagem:</string>
 </resources>
