@@ -1,195 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".pages.travel.CreateTravelFragment">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <!-- Layout de fundo -->
+    <include layout="@layout/background" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+    <!-- Conteúdo principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <Toolbar
-                android:id="@+id/toolbar"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#48C9B0"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="MissingConstraints" />
+                android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/logo"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginHorizontal="16dp"
-                android:scaleType="center"
-                android:scaleX="1.5"
-                android:scaleY="1.5"
-                android:src="@mipmap/logo_3_foreground"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/toolbar"
-                app:layout_constraintStart_toStartOf="@+id/toolbar"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp">
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="12dp"
-                    android:textColor="@color/black"
-                    android:text="@string/CreateTravel"
+                    android:background="#48C9B0"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <EditText
-                    android:id="@+id/nameField"
-                    android:layout_width="260dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/rounded_corners"
-                    android:elevation="4dp"
-                    android:textColorHint="@android:color/black"
-                    android:textColor="@android:color/black"
-                    android:hint="@string/Name"
-                    android:layout_marginTop="20dp"
-                    android:paddingStart="8dp"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/descriptionField"
-                    android:layout_width="260dp"
-                    android:layout_height="168dp"
-                    android:background="@drawable/rounded_corners"
-                    android:elevation="4dp"
-                    android:textColorHint="@android:color/black"
-                    android:textColor="@android:color/black"
-                    android:hint="@string/Description"
-                    android:layout_marginTop="16dp"
-                    android:paddingStart="8dp"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/initialDateField"
-                    android:layout_width="260dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/rounded_corners"
-                    android:elevation="4dp"
-                    android:textColorHint="@android:color/black"
-                    android:textColor="@android:color/black"
-                    android:hint="@string/InitialDate"
-                    android:layout_marginTop="16dp"
-                    android:paddingStart="8dp"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/finalDateField"
-                    android:layout_width="260dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/rounded_corners"
-                    android:elevation="4dp"
-                    android:textColorHint="@android:color/black"
-                    android:textColor="@android:color/black"
-                    android:hint="@string/FinalDate"
-                    android:layout_marginTop="16dp"
-                    android:paddingStart="8dp"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/localField"
-                    android:layout_width="260dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/rounded_corners"
-                    android:elevation="4dp"
-                    android:textColorHint="@android:color/black"
-                    android:textColor="@android:color/black"
-                    android:hint="@string/Localization"
-                    android:layout_marginTop="16dp"
-                    android:paddingStart="8dp"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/classificationField"
-                    android:layout_width="260dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/rounded_corners"
-                    android:elevation="4dp"
-                    android:textColorHint="@android:color/black"
-                    android:textColor="@android:color/black"
-                    android:hint="@string/Classification"
-                    android:layout_marginTop="16dp"
-                    android:paddingStart="8dp"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="16dp"
-                    android:textColor="@color/black"
-                    android:text="@string/AddImage"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
 
                 <ImageView
-                    android:id="@+id/profileImage"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginTop="12dp"
-                    android:backgroundTint="@color/blue"
-                    android:background="@drawable/rounded_corners"
-                    android:layout_marginBottom="-50dp" />
+                    android:id="@+id/logo"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:scaleType="center"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:src="@mipmap/logo_3_foreground"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/toolbar"
+                    app:layout_constraintStart_toStartOf="@+id/toolbar"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
-                <Button
-                    android:id="@+id/saveButton"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginLeft="150dp"
-                    android:backgroundTint="@color/softBlue" />
-            </LinearLayout>
-        </ScrollView>
-    </FrameLayout>
 
-    <include
-        android:id="@+id/tabbar"
-        layout="@layout/tabbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
-</LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/black"
+                        android:text="@string/CreateTravel"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/nameField"
+                        android:layout_width="260dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/rounded_corners"
+                        android:elevation="4dp"
+                        android:textColorHint="@android:color/black"
+                        android:textColor="@android:color/black"
+                        android:hint="@string/Name"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="8dp"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/descriptionField"
+                        android:layout_width="260dp"
+                        android:layout_height="168dp"
+                        android:background="@drawable/rounded_corners"
+                        android:elevation="4dp"
+                        android:textColorHint="@android:color/black"
+                        android:textColor="@android:color/black"
+                        android:hint="@string/Description"
+                        android:layout_marginTop="16dp"
+                        android:paddingStart="8dp"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/initialDateField"
+                        android:layout_width="260dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/rounded_corners"
+                        android:elevation="4dp"
+                        android:textColorHint="@android:color/black"
+                        android:textColor="@android:color/black"
+                        android:hint="@string/InitialDate"
+                        android:layout_marginTop="16dp"
+                        android:paddingStart="8dp"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/finalDateField"
+                        android:layout_width="260dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/rounded_corners"
+                        android:elevation="4dp"
+                        android:textColorHint="@android:color/black"
+                        android:textColor="@android:color/black"
+                        android:hint="@string/FinalDate"
+                        android:layout_marginTop="16dp"
+                        android:paddingStart="8dp"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/localField"
+                        android:layout_width="260dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/rounded_corners"
+                        android:elevation="4dp"
+                        android:textColorHint="@android:color/black"
+                        android:textColor="@android:color/black"
+                        android:hint="@string/Localization"
+                        android:layout_marginTop="16dp"
+                        android:paddingStart="8dp"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/classificationField"
+                        android:layout_width="260dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/rounded_corners"
+                        android:elevation="4dp"
+                        android:textColorHint="@android:color/black"
+                        android:textColor="@android:color/black"
+                        android:hint="@string/Classification"
+                        android:layout_marginTop="16dp"
+                        android:paddingStart="8dp"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@color/black"
+                        android:text="@string/AddImage"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_marginTop="12dp"
+                        android:backgroundTint="@color/blue"
+                        android:background="@drawable/rounded_corners"
+                        android:layout_marginBottom="-50dp" />
+
+                    <Button
+                        android:id="@+id/saveButton"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="150dp"
+                        android:backgroundTint="@color/softBlue" />
+                </LinearLayout>
+            </ScrollView>
+        </FrameLayout>
+
+        <include
+            android:id="@+id/tabbar"
+            layout="@layout/tabbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</FrameLayout>

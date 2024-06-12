@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.abouttravel.R
@@ -28,7 +29,7 @@ class HomeFragment : Fragment() {
 
         val bottomNavigationView = view.findViewById<BottomNavigationView>(R.id.navbar)
 
-        bottomNavigationView.setOnItemSelectedListener { item ->
+        bottomNavigationView?.setOnItemSelectedListener { item ->
             when (item.itemId) {
 
                 R.id.share -> {
@@ -46,4 +47,5 @@ class HomeFragment : Fragment() {
 
         return view
     }
+
 }

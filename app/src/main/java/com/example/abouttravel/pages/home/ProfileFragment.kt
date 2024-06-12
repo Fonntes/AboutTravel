@@ -26,7 +26,7 @@ class ProfileFragment : Fragment() {
 
         val bottomNavigationView = view.findViewById<BottomNavigationView>(R.id.navbar)
 
-        bottomNavigationView.setOnItemSelectedListener { item ->
+        bottomNavigationView?.setOnItemSelectedListener { item ->
             when (item.itemId) {
 
                 R.id.home -> {
