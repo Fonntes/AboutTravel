@@ -28,4 +28,9 @@
     <string name="AssociatedAccount">Conta associada</string>
     <string name="Logout">Sair</string>
     <string name="AddImage">Adicionar Imagem:</string>
+    <string name="Next">Próximo</string>
+    <string name="intro_1_text">Se gostas de viajar, esta aplicação é para ti.</string>
+    <string name="intro_2_text">Guarda as tuas memorias enquanto viajas.</string>
+    <string name="intro_3_text">Partilha com os teus amigos.</string>
+    <string name="Welcome">Bem-Vindo</string>
 </resources>
