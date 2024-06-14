@@ -16,7 +16,7 @@ data class Session(
     @NonNull @ColumnInfo(name = "name") var name: String = "",
     @NonNull @ColumnInfo(name = "phone_number") var phoneNumber: String = "",
     @NonNull @ColumnInfo(name = "email") var email: String = "",
-    @NonNull @ColumnInfo(name = "file_path") var profileImage: String = "",
+    @NonNull @ColumnInfo(name = "file_path") var profilePicture: String = "",
     @NonNull @ColumnInfo(name = "description") var description: String = "",
     @NonNull @ColumnInfo(name = "created_at") var createdAt: Date = Date(),
     @NonNull @ColumnInfo(name = "updated_at") var updatedAt: Date = Date(),
