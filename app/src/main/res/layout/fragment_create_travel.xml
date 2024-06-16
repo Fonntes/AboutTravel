@@ -50,9 +50,6 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
 
-
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -177,20 +174,19 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
-                        android:id="@+id/profileImage"
+                        android:id="@+id/imageTrip"
                         android:layout_width="160dp"
                         android:layout_height="160dp"
                         android:layout_marginTop="12dp"
-                        android:backgroundTint="@color/blue"
-                        android:background="@drawable/rounded_corners"
+                        android:background="@drawable/add_trip"
                         android:layout_marginBottom="-50dp" />
 
-                    <Button
-                        android:id="@+id/saveButton"
+                    <ImageView
+                        android:id="@+id/savetrip"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginLeft="150dp"
-                        android:backgroundTint="@color/softBlue" />
+                        android:background="@drawable/outline_save" />
                 </LinearLayout>
             </ScrollView>
         </FrameLayout>

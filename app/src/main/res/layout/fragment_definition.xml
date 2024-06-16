@@ -75,7 +75,7 @@
             <Button
                 android:id="@+id/Sobrenos"
                 android:layout_width="200dp"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/Sobrenos"
@@ -85,7 +85,7 @@
             <Button
                 android:id="@+id/Language"
                 android:layout_width="200dp"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/Language"
@@ -95,7 +95,7 @@
             <Button
                 android:id="@+id/AssociatedAccount"
                 android:layout_width="200dp"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/AssociatedAccount"
