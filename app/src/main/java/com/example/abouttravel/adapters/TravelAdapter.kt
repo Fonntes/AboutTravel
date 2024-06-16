@@ -21,7 +21,11 @@ class TravelAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val travel = travels[position]
         holder.travel.text = travel.title
-        holder.places.text = travel.country
+        if (travel.location.isNotBlank()){
+            holder.places.text = travel.location
+        }else{
+            holder.places.text = "Unknown"
+        }
 
         if (travel.image.isNotBlank()) {
             Picasso.get().load(travel.image).into(holder.image)

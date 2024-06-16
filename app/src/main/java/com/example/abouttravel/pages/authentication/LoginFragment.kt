@@ -57,7 +57,7 @@ class LoginFragment : Fragment() {
         }
 
         // Simulação de sucesso no login (você deve implementar a lógica real de login aqui)
-        if (username == "exampleUser" && password == "examplePassword") {
+        if (username == "User" && password == "Password") {
             // Criar e salvar a sessão
             //createAndSaveSession()
 

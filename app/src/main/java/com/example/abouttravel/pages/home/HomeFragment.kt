@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.abouttravel.R
 import com.example.abouttravel.adapters.TravelAdapter
@@ -30,7 +30,11 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         recyclerView = view.findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        // Configuração do GridLayoutManager
+        val numberOfColumns = calculateNumberOfColumns(110) // 110 é a largura do item em dp
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), numberOfColumns)
+
         travelAdapter = TravelAdapter(emptyList()) // Inicialmente com lista vazia
         recyclerView.adapter = travelAdapter
 
@@ -43,21 +47,17 @@ class HomeFragment : Fragment() {
         })
 
         val add = view.findViewById<ImageView>(R.id.addTravel)
-
-        add.setOnClickListener{
+        add.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_createTravelFragment2)
         }
 
         val bottomNavigationView = view.findViewById<BottomNavigationView>(R.id.navbar)
-
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-
                 R.id.share -> {
                     findNavController().navigate(R.id.action_homeFragment_to_shareFragment)
                     true
                 }
-
                 R.id.profile -> {
                     findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
                     true
@@ -67,5 +67,13 @@ class HomeFragment : Fragment() {
         }
 
         return view
+    }
+
+    // Função para calcular o número de colunas com base na largura da tela e a largura do item
+    private fun calculateNumberOfColumns(itemWidthInDp: Int): Int {
+        val displayMetrics = resources.displayMetrics
+        val itemWidthInPx = itemWidthInDp * displayMetrics.density
+        val screenWidthInPx = displayMetrics.widthPixels
+        return (screenWidthInPx / itemWidthInPx).toInt()
     }
 }
