@@ -40,4 +40,5 @@
     <string name="intro_2_text">Save your memories while you travel.</string>
     <string name="intro_3_text">Share with your friends.</string>
     <string name="Welcome">Welcome</string>
+    <string name="no_wifi">No conection</string>
 </resources>

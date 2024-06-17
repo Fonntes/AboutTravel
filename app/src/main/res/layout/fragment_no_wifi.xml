@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pages.authentication.LoginFragment">
+
+    <include layout="@layout/background" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="350dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/no_wifi"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/no_wifi"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/buttonLoginToHome"
+            android:layout_width="200dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/Next"
+            android:textSize="28sp"
+            android:backgroundTint="@color/blue"
+            android:layout_marginBottom="12dp"
+            />
+
+    </LinearLayout>
+</FrameLayout>
