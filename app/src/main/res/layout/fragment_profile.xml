@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pages.home.ProfileFragment">
+
+    <!-- Layout de fundo -->
+    <include layout="@layout/background" />
+
+    <!-- Conteúdo principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#48C9B0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginStart="44dp"
+                    android:scaleType="center"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:src="@mipmap/logo_3_foreground"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/settings"
+                    app:layout_constraintStart_toStartOf="@+id/toolbar"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/settings"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/toolbar"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/black"
+                        android:text="@string/Profile"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_marginTop="48dp"
+                        android:background="@drawable/circle_blue" />
+
+                    <TextView
+                        android:id="@+id/nameField"
+                        android:layout_width="260dp"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="28dp"
+                        android:background="@drawable/rounded_corners"
+                        android:textColorHint="@android:color/black"
+                        android:textColor="@android:color/black"
+                        android:elevation="4dp"
+                        android:hint="@string/Name"
+                        android:paddingStart="8dp"
+                        android:textSize="24sp"
+                        android:gravity="center_vertical"/>
+
+                    <TextView
+                        android:id="@+id/usernameField"
+                        android:layout_width="260dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/rounded_corners"
+                        android:textColorHint="@android:color/black"
+                        android:textColor="@android:color/black"
+                        android:elevation="4dp"
+                        android:hint="@string/Username"
+                        android:layout_marginTop="16dp"
+                        android:paddingStart="8dp"
+                        android:textSize="24sp"
+                        android:gravity="center_vertical"/>
+
+                    <TextView
+                        android:id="@+id/numberField"
+                        android:layout_width="260dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/rounded_corners"
+                        android:textColorHint="@android:color/black"
+                        android:textColor="@android:color/black"
+                        android:elevation="4dp"
+                        android:hint="@string/Number"
+                        android:layout_marginTop="16dp"
+                        android:paddingStart="8dp"
+                        android:textSize="24sp"
+                        android:gravity="center_vertical"/>
+
+                    <TextView
+                        android:id="@+id/emailField"
+                        android:layout_width="260dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/rounded_corners"
+                        android:textColorHint="@android:color/black"
+                        android:textColor="@android:color/black"
+                        android:elevation="4dp"
+                        android:hint="@string/Email"
+                        android:layout_marginTop="16dp"
+                        android:paddingStart="8dp"
+                        android:textSize="24sp"
+                        android:gravity="center_vertical"/>
+
+                    <TextView
+                        android:id="@+id/descriptionField"
+                        android:layout_width="260dp"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/rounded_corners"
+                        android:elevation="4dp"
+                        android:hint="@string/Description"
+                        android:paddingStart="8dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+            </ScrollView>
+
+        </FrameLayout>
+
+        <include
+            android:id="@+id/tabbar"
+            layout="@layout/tabbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</FrameLayout>

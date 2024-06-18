@@ -1,11 +1,12 @@
 package com.example.abouttravel.data.service
 
+import androidx.lifecycle.LiveData
 import com.example.abouttravel.data.entities.Session
 import com.example.abouttravel.data.repository.SessionRepository
 
 class SessionService(private val sessionRepository: SessionRepository) {
 
-    val Session = sessionRepository.Session
+    val session: LiveData<Session> = sessionRepository.session
 
     suspend fun insert(session: Session) {
         sessionRepository.insert(session)

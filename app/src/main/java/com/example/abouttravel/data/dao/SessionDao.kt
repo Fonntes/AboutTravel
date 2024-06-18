@@ -1,5 +1,6 @@
 package com.example.abouttravel.data.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -13,13 +14,12 @@ interface SessionDao {
     @Insert
     suspend fun insertSession(session: Session): Long
 
-    @Query("SELECT * FROM session")
-    fun getsession():Session
+    @Query("SELECT * FROM session LIMIT 1")
+    fun getSession(): LiveData<Session>
 
     @Update
     suspend fun updateSession(session: Session)
 
     @Delete
     suspend fun deleteSession(session: Session)
-
 }
