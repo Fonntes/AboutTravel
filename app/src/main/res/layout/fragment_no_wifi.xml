@@ -18,7 +18,7 @@
             android:id="@+id/image_view"
             android:layout_width="350dp"
             android:layout_height="200dp"
-            android:src="@mipmap/no_wifi"
+
             android:scaleType="centerCrop" />
 
         <TextView

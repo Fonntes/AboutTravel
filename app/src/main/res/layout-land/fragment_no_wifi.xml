@@ -19,7 +19,7 @@
             android:layout_width="300dp"
             android:layout_marginTop="48dp"
             android:layout_height="200dp"
-            android:src="@mipmap/no_wifi"
+
             android:scaleType="centerCrop" />
 
         <TextView
