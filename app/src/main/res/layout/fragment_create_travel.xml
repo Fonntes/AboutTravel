@@ -85,7 +85,7 @@
 
                     <EditText
                         android:id="@+id/nameField"
-                        android:layout_width="260dp"
+                        android:layout_width="300dp"
                         android:layout_height="56dp"
                         android:background="@drawable/rounded_corners"
                         android:elevation="4dp"
@@ -98,7 +98,7 @@
 
                     <EditText
                         android:id="@+id/descriptionField"
-                        android:layout_width="260dp"
+                        android:layout_width="300dp"
                         android:layout_height="168dp"
                         android:background="@drawable/rounded_corners"
                         android:elevation="4dp"
@@ -107,11 +107,13 @@
                         android:hint="@string/Description"
                         android:layout_marginTop="16dp"
                         android:paddingStart="8dp"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:focusable="false"
+                        android:clickable="true"/>
 
                     <EditText
                         android:id="@+id/initialDateField"
-                        android:layout_width="260dp"
+                        android:layout_width="300dp"
                         android:layout_height="56dp"
                         android:background="@drawable/rounded_corners"
                         android:elevation="4dp"
@@ -120,11 +122,13 @@
                         android:hint="@string/InitialDate"
                         android:layout_marginTop="16dp"
                         android:paddingStart="8dp"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:focusable="false"
+                        android:clickable="true"/>
 
                     <EditText
                         android:id="@+id/finalDateField"
-                        android:layout_width="260dp"
+                        android:layout_width="300dp"
                         android:layout_height="56dp"
                         android:background="@drawable/rounded_corners"
                         android:elevation="4dp"
@@ -137,7 +141,7 @@
 
                     <EditText
                         android:id="@+id/localField"
-                        android:layout_width="260dp"
+                        android:layout_width="300dp"
                         android:layout_height="56dp"
                         android:background="@drawable/rounded_corners"
                         android:elevation="4dp"
@@ -150,7 +154,7 @@
 
                     <EditText
                         android:id="@+id/classificationField"
-                        android:layout_width="260dp"
+                        android:layout_width="300dp"
                         android:layout_height="56dp"
                         android:background="@drawable/rounded_corners"
                         android:elevation="4dp"
@@ -187,6 +191,18 @@
                         android:layout_height="80dp"
                         android:layout_marginLeft="150dp"
                         android:background="@drawable/outline_save" />
+
+                    <EditText
+                        android:id="@+id/ageEditText"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:inputType="none"
+                        android:focusable="false"
+                        android:onClick="showDatePickerDialog"
+                        android:padding="16dp"
+                />
+
                 </LinearLayout>
             </ScrollView>
         </FrameLayout>
@@ -195,7 +211,8 @@
             android:id="@+id/tabbar"
             layout="@layout/tabbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"/>
 
     </LinearLayout>
 

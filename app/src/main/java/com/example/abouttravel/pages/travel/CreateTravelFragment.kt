@@ -1,6 +1,11 @@
 package com.example.abouttravel.pages.travel
 
+import android.app.Activity.RESULT_OK
+import android.app.DatePickerDialog
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -17,12 +22,20 @@ import com.example.abouttravel.data.entities.Trip
 import com.example.abouttravel.data.vm.SessionViewModel
 import com.example.abouttravel.data.vm.TripViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Date
+import java.util.Locale
 
 class CreateTravelFragment : Fragment() {
 
     private val tripViewModel: TripViewModel by viewModels()
     private val sessionViewModel: SessionViewModel by viewModels()
+    private lateinit var imageTrip: ImageView
+    private val PICK_IMAGE_REQUEST = 1
+    private var imageUri: Uri? = null
+
+    private lateinit var ageEditText: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,6 +60,12 @@ class CreateTravelFragment : Fragment() {
                 }
                 else -> false
             }
+
+        }
+
+        ageEditText = view.findViewById(R.id.ageEditText)
+        ageEditText.setOnClickListener {
+            showDatePickerDialog()
         }
 
         val saveButton = view.findViewById<ImageView>(R.id.savetrip)
@@ -55,7 +74,47 @@ class CreateTravelFragment : Fragment() {
             saveTrip(view)
         }
 
+        imageTrip = view.findViewById(R.id.imageTrip)
+        imageTrip.setOnClickListener {
+            openImagePicker()
+        }
+
         return view
+    }
+
+    private fun showDatePickerDialog() {
+        val currentCalendar = Calendar.getInstance()
+        val currentYear = currentCalendar.get(Calendar.YEAR) + 1
+        val currentMonth = currentCalendar.get(Calendar.MONTH)
+        val currentDay = currentCalendar.get(Calendar.DAY_OF_MONTH)
+
+        val datePickerDialog = DatePickerDialog(requireContext(), { _, year, monthOfYear, dayOfMonth ->
+            val selectedCalendar = Calendar.getInstance()
+            selectedCalendar.set(year, monthOfYear, dayOfMonth)
+
+            // Formata a data para "dia de mês de ano"
+            val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
+            val formattedDate = dateFormat.format(selectedCalendar.time)
+
+
+            ageEditText.setText("$currentDay $currentMonth $currentYear")
+        }, currentYear, currentMonth, currentDay)
+
+        datePickerDialog.show()
+    }
+
+
+    private fun openImagePicker() {
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        startActivityForResult(intent, PICK_IMAGE_REQUEST)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.data != null) {
+            imageUri = data.data
+            imageTrip.setImageURI(imageUri)
+        }
     }
 
     private fun saveTrip(view: View) {
@@ -68,10 +127,11 @@ class CreateTravelFragment : Fragment() {
 
         val title = nameField.text.toString()
         val description = descriptionField.text.toString()
-        val initialDate = Date() // Atualizar com a lógica de conversão de data correta
-        val finalDate = Date() // Atualizar com a lógica de conversão de data correta
+        val initialDate = Date() // Update with proper date conversion logic
+        val finalDate = Date() // Update with proper date conversion logic
         val location = localField.text.toString()
         val classification = classificationField.text.toString()
+        val image = imageUri?.toString() ?: ""
 
         Log.d("CreateTravelFragment", "Preparing to observe session")
         sessionViewModel.session.observe(viewLifecycleOwner, Observer { session ->
@@ -86,14 +146,15 @@ class CreateTravelFragment : Fragment() {
                 title = title,
                 description = description,
                 date = initialDate,
-                country = "Unknown", // Ajustar conforme necessário
+                country = "Unknown",
                 location = location,
-                latitude = "0.0", // Ajustar conforme necessário
-                longitude = "0.0", // Ajustar conforme necessário
+                latitude = "0.0",
+                longitude = "0.0",
                 isShared = false,
                 createdAt = Date(),
                 deleteAt = Date(),
-                updatedAt = Date()
+                updatedAt = Date(),
+                image = image,
             )
 
             Log.d("CreateTravelFragment", "Inserting trip: $trip")
@@ -102,4 +163,6 @@ class CreateTravelFragment : Fragment() {
             findNavController().navigate(R.id.action_createTravelFragment2_to_homeFragment)
         })
     }
+
+
 }

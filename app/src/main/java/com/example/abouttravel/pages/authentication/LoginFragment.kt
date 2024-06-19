@@ -59,7 +59,7 @@ class LoginFragment : Fragment() {
         // Simulação de sucesso no login (você deve implementar a lógica real de login aqui)
         if (username == "User" && password == "Password") {
             // Criar e salvar a sessão
-            //createAndSaveSession()
+            // createAndSaveSession()
 
             // Navegar para a próxima tela (homeActivity no exemplo)
             findNavController().navigate(R.id.action_loginFragment_to_homeActivity)
