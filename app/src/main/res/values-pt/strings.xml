@@ -33,4 +33,5 @@
     <string name="intro_2_text">Guarda as tuas memorias enquanto viajas.</string>
     <string name="intro_3_text">Partilha com os teus amigos.</string>
     <string name="Welcome">Bem-Vindo</string>
+    <string name="no_wifi">Sem conecção</string>
 </resources>

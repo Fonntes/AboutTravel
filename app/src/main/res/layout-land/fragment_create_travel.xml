@@ -9,215 +9,222 @@
     <!-- Layout de fundo -->
     <include layout="@layout/background" />
 
-    <!-- Conteúdo principal -->
-    <LinearLayout
+    <!-- AppBarLayout fora do ScrollView -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#48C9B0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:src="@drawable/back"
+                app:layout_constraintBottom_toBottomOf="@id/toolbar"
+                app:layout_constraintStart_toStartOf="@+id/toolbar"
+                app:layout_constraintTop_toTopOf="@id/toolbar" />
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="16dp"
+                android:scaleType="center"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:src="@mipmap/logo_3_foreground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/addTravel"
+                app:layout_constraintStart_toEndOf="@+id/back"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/addTravel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:src="@drawable/menu"
+                app:layout_constraintBottom_toBottomOf="@id/toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/toolbar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ScrollView para o conteúdo rolável -->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_marginTop="?attr/actionBarSize"
+        android:clipToPadding="false">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#48C9B0"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:scaleX="1.5"
-                    android:scaleY="1.5"
-                    android:src="@drawable/back"
-                    app:layout_constraintBottom_toBottomOf="@id/toolbar"
-                    app:layout_constraintStart_toStartOf="@+id/toolbar"
-                    app:layout_constraintTop_toTopOf="@id/toolbar" />
-
-                <ImageView
-                    android:id="@+id/logo"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginHorizontal="16dp"
-                    android:scaleType="center"
-                    android:scaleX="1.5"
-                    android:scaleY="1.5"
-                    android:src="@mipmap/logo_3_foreground"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/addTravel"
-                    app:layout_constraintStart_toEndOf="@+id/back"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
-
-                <ImageView
-                    android:id="@+id/addTravel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="24dp"
-                    android:scaleX="1.5"
-                    android:scaleY="1.5"
-                    android:src="@drawable/menu"
-                    app:layout_constraintBottom_toBottomOf="@id/toolbar"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/toolbar" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="12dp"
-            android:textColor="@color/black"
-            android:text="@string/CreateTravel"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
+        <!-- Conteúdo principal dentro do ScrollView -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_weight="1"
-            >
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <EditText
-                    android:id="@+id/nameField"
-                    android:layout_width="260dp"
-                    android:layout_height="56dp"
-                    android:background="@color/grey"
-                    android:elevation="4dp"
-                    android:hint="@string/Name"
-                    android:layout_marginTop="-24dp"
-                    android:paddingStart="8dp"
-                    android:textSize="20sp"
-                    android:textColorHint="@android:color/black"
-                    android:textColor="@android:color/black"
-                    />
-
-
-                <EditText
-                    android:id="@+id/descriptionField"
-                    android:layout_width="260dp"
-                    android:layout_height="112dp"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/grey"
-                    android:elevation="4dp"
-                    android:hint="@string/Description"
-                    android:paddingStart="8dp"
-                    android:textSize="20sp"
-                    android:textColorHint="@android:color/black"
-                    android:textColor="@android:color/black"/>
-
-                <EditText
-                    android:id="@+id/initialDateField"
-                    android:layout_width="260dp"
-                    android:layout_height="56dp"
-                    android:background="@color/grey"
-                    android:elevation="4dp"
-                    android:hint="@string/InitialDate"
-                    android:layout_marginTop="16dp"
-                    android:paddingStart="8dp"
-                    android:textSize="20sp"
-                    android:textColorHint="@android:color/black"
-                    android:textColor="@android:color/black"
-                    />
-
-                <EditText
-                    android:id="@+id/finalDateField"
-                    android:layout_width="260dp"
-                    android:layout_height="56dp"
-                    android:background="@color/grey"
-                    android:elevation="4dp"
-                    android:hint="@string/FinalDate"
-                    android:layout_marginTop="16dp"
-                    android:paddingStart="8dp"
-                    android:textSize="20sp"
-                    android:textColorHint="@android:color/black"
-                    android:textColor="@android:color/black"
-                    />
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/black"
+                android:text="@string/CreateTravel"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-
-                <EditText
-                    android:id="@+id/localField"
-                    android:layout_width="260dp"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="32dp"
-                    android:background="@color/grey"
-                    android:elevation="4dp"
-                    android:hint="@string/Localization"
-                    android:paddingStart="8dp"
-                    android:textColor="@android:color/black"
-                    android:textColorHint="@android:color/black"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/cklassificationField"
-                    android:layout_width="260dp"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/grey"
-                    android:elevation="4dp"
-                    android:hint="@string/Classification"
-                    android:paddingStart="8dp"
-                    android:textSize="20sp"
-                    android:textColorHint="@android:color/black"
-                    android:textColor="@android:color/black"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/CreateTravel"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:textColorHint="@android:color/black"
-                    android:textColor="@android:color/black"/>
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
 
-                <ImageView
-                    android:id="@+id/profileImage"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="-70dp"
-                    android:background="@color/blue" />
+                    <EditText
+                        android:id="@+id/nameField"
+                        android:layout_width="260dp"
+                        android:layout_height="56dp"
+                        android:background="@color/grey"
+                        android:elevation="4dp"
+                        android:hint="@string/Name"
+                        android:layout_marginTop="24dp"
+                        android:paddingStart="8dp"
+                        android:textSize="20sp"
+                        android:textColorHint="@android:color/black"
+                        android:textColor="@android:color/black" />
 
 
+                    <EditText
+                        android:id="@+id/descriptionField"
+                        android:layout_width="260dp"
+                        android:layout_height="112dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/grey"
+                        android:elevation="4dp"
+                        android:hint="@string/Description"
+                        android:paddingStart="8dp"
+                        android:textSize="20sp"
+                        android:textColorHint="@android:color/black"
+                        android:textColor="@android:color/black" />
+
+                    <EditText
+                        android:id="@+id/initialDateField"
+                        android:layout_width="260dp"
+                        android:layout_height="56dp"
+                        android:background="@color/grey"
+                        android:elevation="4dp"
+                        android:hint="@string/InitialDate"
+                        android:layout_marginTop="16dp"
+                        android:paddingStart="8dp"
+                        android:textSize="20sp"
+                        android:textColorHint="@android:color/black"
+                        android:textColor="@android:color/black" />
+
+                    <EditText
+                        android:id="@+id/finalDateField"
+                        android:layout_width="260dp"
+                        android:layout_height="56dp"
+                        android:background="@color/grey"
+                        android:elevation="4dp"
+                        android:hint="@string/FinalDate"
+                        android:layout_marginTop="16dp"
+                        android:paddingStart="8dp"
+                        android:textSize="20sp"
+                        android:textColorHint="@android:color/black"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/localField"
+                        android:layout_width="260dp"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="32dp"
+                        android:background="@color/grey"
+                        android:elevation="4dp"
+                        android:hint="@string/Localization"
+                        android:paddingStart="8dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/cklassificationField"
+                        android:layout_width="260dp"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/grey"
+                        android:elevation="4dp"
+                        android:hint="@string/Classification"
+                        android:paddingStart="8dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/CreateTravel"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="-70dp"
+                        android:background="@drawable/add_trip" />
+                    <ImageView
+                        android:id="@+id/savetrip"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="135dp"
+                        android:background="@drawable/outline_save" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

@@ -75,27 +75,41 @@
             <Button
                 android:id="@+id/Sobrenos"
                 android:layout_width="200dp"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/Sobrenos"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/Language"
-                android:layout_width="200dp"
-                android:layout_height="56dp"
-                android:layout_marginTop="32dp"
-                android:backgroundTint="@color/grey"
-                android:text="@string/Language"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+            <!--<LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="66dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/language"
+                    android:textAppearance="@style/textStyle" />
+
+                <com.example.firewatch.presentation.components.dropDown.DropDown
+                    android:id="@+id/countries_drop_down"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"/>
+            </LinearLayout>-->
 
             <Button
                 android:id="@+id/AssociatedAccount"
                 android:layout_width="200dp"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/AssociatedAccount"

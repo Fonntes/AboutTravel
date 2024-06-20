@@ -25,7 +25,6 @@
         android:text="@string/Login"
         android:textSize="40sp" />
 
-    <!-- Name EditText -->
     <EditText
         android:id="@+id/nameField"
         android:layout_width="260dp"
@@ -39,7 +38,6 @@
         android:elevation="4dp"
         android:layout_marginBottom="12dp" />
 
-    <!-- Password EditText -->
     <EditText
         android:id="@+id/passField"
         android:layout_width="260dp"
@@ -51,7 +49,8 @@
         android:paddingStart="8dp"
         android:background="@drawable/rounded_corners"
         android:elevation="4dp"
-        android:layout_marginBottom="12dp" />
+        android:layout_marginBottom="12dp"
+        android:inputType="textPassword"/>
 
     <!-- Login Button -->
     <Button

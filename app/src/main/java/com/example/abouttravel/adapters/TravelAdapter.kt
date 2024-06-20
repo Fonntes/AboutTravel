@@ -11,8 +11,10 @@ import com.example.abouttravel.data.entities.Trip
 import com.squareup.picasso.Picasso
 
 class TravelAdapter(
-    private val travels: List<Trip>
-) : RecyclerView.Adapter<TravelAdapter.MyViewHolder>()  {
+    private var travels: List<Trip>,
+    private val onItemClickListener: (Trip) -> Unit // Listener de clique
+) : RecyclerView.Adapter<TravelAdapter.MyViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.travels_adapter, parent, false)
         return MyViewHolder(itemView)
@@ -21,12 +23,30 @@ class TravelAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val travel = travels[position]
         holder.travel.text = travel.title
-        holder.places.text = travel.country //Alterar
-        Picasso.get().load(travel.image).into(holder.image)
+        if (travel.location.isNotBlank()){
+            holder.places.text = travel.location
+        } else {
+            holder.places.text = "Unknown"
+        }
+
+        if (travel.image.isNotBlank()) {
+            Picasso.get().load(travel.image).into(holder.image)
+        } else {
+            holder.image.setImageResource(R.drawable.profile)
+        }
+
+        holder.itemView.setOnClickListener {
+            onItemClickListener(travel) // Chama o listener de clique passando o objeto `Trip`
+        }
     }
 
     override fun getItemCount(): Int {
         return travels.size
+    }
+
+    fun updateData(newList: List<Trip>) {
+        travels = newList
+        notifyDataSetChanged()
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -34,7 +54,4 @@ class TravelAdapter(
         val places: TextView = itemView.findViewById(R.id.places)
         val image: ImageView = itemView.findViewById(R.id.image)
     }
-
-
-
 }

@@ -9,18 +9,18 @@ import com.example.abouttravel.data.entities.Session
 import com.example.abouttravel.data.repository.SessionRepository
 import com.example.abouttravel.data.service.SessionService
 import kotlinx.coroutines.launch
-
+import java.util.Date
 
 class SessionViewModel(application: Application) : AndroidViewModel(application) {
 
     private val sessionService: SessionService
-    val Session: Session
+    val session: LiveData<Session>
 
     init {
         val sessionDao = AboutTravelDataBase.getDatabase(application).sessionDao()
         val sessionRepository = SessionRepository(sessionDao)
         sessionService = SessionService(sessionRepository)
-        Session = sessionService.Session
+        session = sessionService.session
     }
 
     fun insert(session: Session) = viewModelScope.launch {
@@ -33,5 +33,19 @@ class SessionViewModel(application: Application) : AndroidViewModel(application)
 
     fun delete(session: Session) = viewModelScope.launch {
         sessionService.delete(session)
+    }
+    fun createTestSession() = viewModelScope.launch {
+        val testSession = Session(
+            id = 1, // ID fixo para teste
+            name = "Test User",
+            phoneNumber = "123456789",
+            email = "test@example.com",
+            profilePicture = "/path/to/profile/picture",
+            description = "Test description",
+            createdAt = Date(),
+            updatedAt = Date(),
+            deleteAt = Date()
+        )
+        sessionService.insert(testSession)
     }
 }
