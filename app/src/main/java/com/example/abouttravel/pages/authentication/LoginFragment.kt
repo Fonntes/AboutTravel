@@ -56,12 +56,9 @@ class LoginFragment : Fragment() {
             return
         }
 
-        // Simulação de sucesso no login (você deve implementar a lógica real de login aqui)
         if (username == "User" && password == "Password") {
-            // Criar e salvar a sessão
             // createAndSaveSession()
 
-            // Navegar para a próxima tela (homeActivity no exemplo)
             findNavController().navigate(R.id.action_loginFragment_to_homeActivity)
         } else {
             Toast.makeText(context, "Credenciais inválidas!", Toast.LENGTH_SHORT).show()
@@ -69,7 +66,6 @@ class LoginFragment : Fragment() {
     }
 
     private fun createAndSaveSession() {
-        // Criar uma sessão de exemplo (você pode ajustar conforme necessário)
         val testSession = Session(
             id = 1, // ID fixo para teste
             name = "Test User",

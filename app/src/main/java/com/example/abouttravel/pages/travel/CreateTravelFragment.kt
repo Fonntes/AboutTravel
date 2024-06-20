@@ -34,8 +34,9 @@ class CreateTravelFragment : Fragment() {
     private lateinit var imageTrip: ImageView
     private val PICK_IMAGE_REQUEST = 1
     private var imageUri: Uri? = null
-
-    private lateinit var ageEditText: EditText
+    private lateinit var initialDateField: EditText
+    private lateinit var finalDateField: EditText
+    private var calendar = Calendar.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,9 +64,15 @@ class CreateTravelFragment : Fragment() {
 
         }
 
-        ageEditText = view.findViewById(R.id.ageEditText)
-        ageEditText.setOnClickListener {
-            showDatePickerDialog()
+        initialDateField = view.findViewById(R.id.initialDateField)
+        finalDateField = view.findViewById(R.id.finalDateField)
+
+        initialDateField.setOnClickListener {
+            showDatePicker(initialDateField)
+        }
+
+        finalDateField.setOnClickListener {
+            showDatePicker(finalDateField)
         }
 
         val saveButton = view.findViewById<ImageView>(R.id.savetrip)
@@ -80,27 +87,6 @@ class CreateTravelFragment : Fragment() {
         }
 
         return view
-    }
-
-    private fun showDatePickerDialog() {
-        val currentCalendar = Calendar.getInstance()
-        val currentYear = currentCalendar.get(Calendar.YEAR) + 1
-        val currentMonth = currentCalendar.get(Calendar.MONTH)
-        val currentDay = currentCalendar.get(Calendar.DAY_OF_MONTH)
-
-        val datePickerDialog = DatePickerDialog(requireContext(), { _, year, monthOfYear, dayOfMonth ->
-            val selectedCalendar = Calendar.getInstance()
-            selectedCalendar.set(year, monthOfYear, dayOfMonth)
-
-            // Formata a data para "dia de mês de ano"
-            val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
-            val formattedDate = dateFormat.format(selectedCalendar.time)
-
-
-            ageEditText.setText("$currentDay $currentMonth $currentYear")
-        }, currentYear, currentMonth, currentDay)
-
-        datePickerDialog.show()
     }
 
 
@@ -120,18 +106,20 @@ class CreateTravelFragment : Fragment() {
     private fun saveTrip(view: View) {
         val nameField = view.findViewById<EditText>(R.id.nameField)
         val descriptionField = view.findViewById<EditText>(R.id.descriptionField)
-        val initialDateField = view.findViewById<EditText>(R.id.initialDateField)
-        val finalDateField = view.findViewById<EditText>(R.id.finalDateField)
         val localField = view.findViewById<EditText>(R.id.localField)
         val classificationField = view.findViewById<EditText>(R.id.classificationField)
 
         val title = nameField.text.toString()
         val description = descriptionField.text.toString()
-        val initialDate = Date() // Update with proper date conversion logic
-        val finalDate = Date() // Update with proper date conversion logic
+        val initialDateText = initialDateField.text.toString()
+        val finalDateText = finalDateField.text.toString()
         val location = localField.text.toString()
         val classification = classificationField.text.toString()
         val image = imageUri?.toString() ?: ""
+
+        val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        val initialDate = sdf.parse(initialDateText)
+        val finalDate = sdf.parse(finalDateText)
 
         Log.d("CreateTravelFragment", "Preparing to observe session")
         sessionViewModel.session.observe(viewLifecycleOwner, Observer { session ->
@@ -162,6 +150,20 @@ class CreateTravelFragment : Fragment() {
             Toast.makeText(context, "Viagem salva com sucesso!", Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_createTravelFragment2_to_homeFragment)
         })
+    }
+    private fun showDatePicker(editText: EditText) {
+        val datePickerDialog = DatePickerDialog(
+            requireContext(),
+            { _, year, month, dayOfMonth ->
+                calendar.set(year, month, dayOfMonth)
+                val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                editText.setText(sdf.format(calendar.time))
+            },
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        )
+        datePickerDialog.show()
     }
 
 

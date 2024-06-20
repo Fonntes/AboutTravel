@@ -31,4 +31,13 @@
         android:name="com.example.abouttravel.pages.travel.HomeActivity"
         android:label="activity_home"
         tools:layout="@layout/activity_home" />
+    <fragment
+        android:id="@+id/definitionFragment2"
+        android:name="com.example.abouttravel.pages.menus.DefinitionFragment"
+        android:label="fragment_definition"
+        tools:layout="@layout/fragment_definition" >
+        <action
+            android:id="@+id/action_definitionFragment2_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>
