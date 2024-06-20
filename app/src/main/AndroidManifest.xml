@@ -20,7 +20,8 @@
             android:name=".pages.travel.HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home"
-            android:theme="@style/Theme.AboutTravel" />
+            android:theme="@style/Theme.AboutTravel"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

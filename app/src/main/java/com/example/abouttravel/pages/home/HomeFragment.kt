@@ -35,7 +35,10 @@ class HomeFragment : Fragment() {
         val numberOfColumns = calculateNumberOfColumns(110) // 110 é a largura do item em dp
         recyclerView.layoutManager = GridLayoutManager(requireContext(), numberOfColumns)
 
-        travelAdapter = TravelAdapter(emptyList()) // Inicialmente com lista vazia
+        travelAdapter = TravelAdapter(emptyList()) { trip ->
+            val action = HomeFragmentDirections.actionHomeFragmentToViewTravelFragment2(trip)
+            findNavController().navigate(action)
+        }
         recyclerView.adapter = travelAdapter
 
         // Configuração do ViewModel para obter dados de viagens

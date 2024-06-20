@@ -15,9 +15,6 @@
             app:destination="@id/profileFragment"
             />
         <action
-            android:id="@+id/action_homeFragment_to_viewTravelFragment2"
-            app:destination="@id/viewTravelFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_shareFragment"
             app:destination="@id/shareFragment" />
         <action
@@ -26,6 +23,13 @@
         <action
             android:id="@+id/action_homeFragment_to_definitionFragment"
             app:destination="@id/definitionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewTravelFragment2"
+            app:destination="@id/viewTravelFragment">
+            <argument
+                android:name="trip"
+                app:argType="com.example.abouttravel.data.entities.Trip"/>
+        </action>
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -65,6 +69,9 @@
         android:name="com.example.abouttravel.pages.travel.ViewTravelFragment"
         android:label="fragment_view_travel"
         tools:layout="@layout/fragment_view_travel" >
+        <argument
+            android:name="trip"
+            app:argType="com.example.abouttravel.data.entities.Trip"/>
         <action
             android:id="@+id/action_viewTravelFragment_to_shareFragment"
             app:destination="@id/shareFragment" />

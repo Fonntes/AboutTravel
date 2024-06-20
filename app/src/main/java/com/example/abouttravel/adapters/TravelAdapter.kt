@@ -1,4 +1,5 @@
 package com.example.abouttravel.adapters
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +11,8 @@ import com.example.abouttravel.data.entities.Trip
 import com.squareup.picasso.Picasso
 
 class TravelAdapter(
-    private var travels: List<Trip>
+    private var travels: List<Trip>,
+    private val onItemClickListener: (Trip) -> Unit // Listener de clique
 ) : RecyclerView.Adapter<TravelAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -23,7 +25,7 @@ class TravelAdapter(
         holder.travel.text = travel.title
         if (travel.location.isNotBlank()){
             holder.places.text = travel.location
-        }else{
+        } else {
             holder.places.text = "Unknown"
         }
 
@@ -31,6 +33,10 @@ class TravelAdapter(
             Picasso.get().load(travel.image).into(holder.image)
         } else {
             holder.image.setImageResource(R.drawable.profile)
+        }
+
+        holder.itemView.setOnClickListener {
+            onItemClickListener(travel) // Chama o listener de clique passando o objeto `Trip`
         }
     }
 
@@ -49,4 +55,3 @@ class TravelAdapter(
         val image: ImageView = itemView.findViewById(R.id.image)
     }
 }
-
