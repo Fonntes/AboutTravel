@@ -1,4 +1,4 @@
-package com.example.abouttravel.network
+package com.example.abouttravel.api
 
 
 import okhttp3.Interceptor

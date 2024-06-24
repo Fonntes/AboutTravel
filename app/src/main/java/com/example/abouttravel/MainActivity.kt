@@ -1,14 +1,14 @@
 package com.example.abouttravel
 
-import android.net.Uri
+import android.content.IntentFilter
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.example.abouttravel.R
-import com.example.abouttravel.data.entities.Session
-import com.example.abouttravel.network.ApiService
-import com.example.abouttravel.network.TokenManager
+import com.example.abouttravel.api.ApiService
+import com.example.abouttravel.api.TokenManager
+import com.example.abouttravel.pages.menus.NetworkChanger
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,33 +19,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val networkChangeReceiver = NetworkChanger()
+        registerReceiver(networkChangeReceiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
 
         val tokenManager = TokenManager(this)
-        tokenManager.removeTokens()
+        //tokenManager.removeTokens()
 
         if (tokenManager.getAccessToken() != null) {
-            println("token guardado no local" + tokenManager.getAccessToken())
+            println("token guardado no local " + tokenManager.getAccessToken())
         } else {
 
-            val apiService = ApiService()
-            val call = apiService.home()
-
-            call.enqueue(object : Callback<ResponseBody> {
-                override fun onResponse(
-                    call: Call<ResponseBody>,
-                    response: Response<ResponseBody>
-                ) {
-                    if (response.isSuccessful) {
-                        val responseBody = response.body()?.string()
-                        println(responseBody)
-                    }
-                }
-
-                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                    t.printStackTrace()
-                }
-            })
-            /*
             val apiService = ApiService()
             val call = apiService.authenticateUser("Jhon", "123456789")
 
@@ -96,7 +79,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                     t.printStackTrace()
                 }
-            })*/
+            })
         }
     }
 }

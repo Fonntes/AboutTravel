@@ -1,16 +1,11 @@
-package com.example.abouttravel.network
-import android.util.Log
+package com.example.abouttravel.api
 import com.example.abouttravel.BuildConfig
 import com.example.abouttravel.data.entities.CreateUser
 import com.example.abouttravel.data.entities.Local
-import com.example.abouttravel.data.entities.Session
 import com.example.abouttravel.data.entities.Trip
 import com.example.abouttravel.data.entities.UserLogin
 import okhttp3.ResponseBody
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Request
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
