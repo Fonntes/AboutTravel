@@ -26,8 +26,28 @@ class MainActivity : AppCompatActivity() {
         if (tokenManager.getAccessToken() != null) {
             println("token guardado no local" + tokenManager.getAccessToken())
         } else {
+
             val apiService = ApiService()
-            val call = apiService.authenticateUser("jhon", "123456789")
+            val call = apiService.home()
+
+            call.enqueue(object : Callback<ResponseBody> {
+                override fun onResponse(
+                    call: Call<ResponseBody>,
+                    response: Response<ResponseBody>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()?.string()
+                        println(responseBody)
+                    }
+                }
+
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    t.printStackTrace()
+                }
+            })
+            /*
+            val apiService = ApiService()
+            val call = apiService.authenticateUser("Jhon", "123456789")
 
             call.enqueue(object : Callback<ResponseBody> {
                 override fun onResponse(
@@ -76,7 +96,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                     t.printStackTrace()
                 }
-            })
+            })*/
         }
     }
 }

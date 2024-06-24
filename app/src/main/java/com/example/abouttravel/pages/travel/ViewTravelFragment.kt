@@ -63,7 +63,7 @@ class ViewTravelFragment : Fragment() {
         binding.tripTitle.text = trip.title
         binding.tripLocation.text = trip.location
         val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
-        val formattedDate = dateFormat.format(trip.date)
+        val formattedDate = dateFormat.format(trip.initialdate)
         binding.tripDate.text = formattedDate
         binding.tripDescription.text = trip.description
     }

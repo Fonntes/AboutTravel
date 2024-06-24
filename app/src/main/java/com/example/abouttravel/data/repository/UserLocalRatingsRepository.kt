@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import com.example.abouttravel.data.dao.UserLocalRatingsDao
 import com.example.abouttravel.data.entities.UserLocalRatings
 
-class UserLocalRatingsRepository(private val userLocalRatingsDao: UserLocalRatingsDao) {
+class UserLocalRatingsRepository(private val userLocalRatingsDao: UserLocalRatingsDao): BaseRepository() {
 
         val ratings: LiveData<List<UserLocalRatings>> = userLocalRatingsDao.getAllRatings()
 

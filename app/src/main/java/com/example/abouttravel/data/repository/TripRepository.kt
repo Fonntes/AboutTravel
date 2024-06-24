@@ -5,7 +5,7 @@ import com.example.abouttravel.data.dao.TripDao
 import com.example.abouttravel.data.entities.Trip
 
 
-class TripRepository(private val tripDao: TripDao) {
+class TripRepository(private val tripDao: TripDao): BaseRepository() {
 
     val allTrip: LiveData<List<Trip>> = tripDao.getAllTrips()
 

@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import com.example.abouttravel.data.dao.LocationDao
 import com.example.abouttravel.data.entities.Local
 
-class LocationRepository(private val locationDao: LocationDao) {
+class LocationRepository(private val locationDao: LocationDao): BaseRepository() {
 
     val allLocations: LiveData<List<Local>> = locationDao.getAllLocations()
 
