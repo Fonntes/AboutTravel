@@ -48,4 +48,8 @@ class SessionViewModel(application: Application) : AndroidViewModel(application)
         )
         sessionService.insert(testSession)
     }
+
+    fun deleteAll() = viewModelScope.launch {
+        sessionService.deleteAll()
+    }
 }

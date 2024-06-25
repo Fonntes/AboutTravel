@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.abouttravel.MainActivity
 import com.example.abouttravel.R
+import com.example.abouttravel.api.TokenManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.Locale
 
@@ -30,7 +31,6 @@ class DefinitionFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_definition, container, false)
-
         val bottomNavigationView = view.findViewById<BottomNavigationView>(R.id.navbar)
         val logoutButton = view.findViewById<Button>(R.id.Logout)
 
@@ -80,6 +80,7 @@ class DefinitionFragment : Fragment() {
         }
 
         logoutButton.setOnClickListener {
+
             logout()
         }
 
@@ -88,6 +89,8 @@ class DefinitionFragment : Fragment() {
 
     private fun logout() {
         // Clear the session (example with SharedPreferences)
+        val tokenManager = TokenManager(requireContext())
+        tokenManager.removeTokens()
         val sharedPreferences = requireActivity().getSharedPreferences("user_session", 0)
         val editor = sharedPreferences.edit()
         editor.clear()

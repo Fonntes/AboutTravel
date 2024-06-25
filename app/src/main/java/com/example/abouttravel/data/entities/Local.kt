@@ -38,5 +38,5 @@ data class Local(
     @NonNull @ColumnInfo(name = "date") var date: Date = Date(),
     @NonNull @ColumnInfo(name = "created_at") var createdAt: Date = Date(),
     @NonNull @ColumnInfo(name = "updated_at") var updatedAt: Date = Date(),
-    @NonNull @ColumnInfo(name = "delete_at") var deleteAt: Date = Date()
+    @ColumnInfo(name = "deleted_at") var deleteAt: Date? = null
 ) : Parcelable

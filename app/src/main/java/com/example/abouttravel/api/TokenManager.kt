@@ -3,53 +3,62 @@ import android.content.Context
 import android.content.SharedPreferences
 
 class TokenManager(context: Context) {
-    private val sharedPreferences: SharedPreferences = context.getSharedPreferences("MyPref", Context.MODE_PRIVATE)
+
+    companion object {
+        private const val PREFS_NAME = "auth_tokens"
+        private const val KEY_ACCESS_TOKEN = "access_token"
+        private const val KEY_ACCESS_TOKEN_EXPIRES_IN = "access_token_expires_in"
+        private const val KEY_REFRESH_TOKEN = "refresh_token"
+        private const val KEY_REFRESH_TOKEN_EXPIRES_IN = "refresh_token_expires_in"
+    }
+
+    private val sharedPreferences: SharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
 
     fun isAccessTokenExpired(): Boolean {
         val expiresIn = getAccessTokenExpiresIn()
-        val currentTime = System.currentTimeMillis() / 1000
+        val currentTime = System.currentTimeMillis()
         return currentTime >= expiresIn
     }
 
 
     fun saveAccessToken(token: String, expiresIn: Int) {
         with(sharedPreferences.edit()) {
-            putString("access_token", token)
-            putLong("access_token_expires_in", System.currentTimeMillis() / 1000 + expiresIn * 60) // Convertendo minutos para segundos
+            putString(KEY_ACCESS_TOKEN, token)
+            putLong(KEY_ACCESS_TOKEN_EXPIRES_IN, System.currentTimeMillis() + expiresIn * 1000L)
             apply()
         }
     }
 
     fun getAccessToken(): String? {
-        return sharedPreferences.getString("access_token", null)
+        return sharedPreferences.getString(KEY_ACCESS_TOKEN, null)
     }
 
     fun getAccessTokenExpiresIn(): Long {
-        return sharedPreferences.getLong("access_token_expires_in", 0)
+        return sharedPreferences.getLong(KEY_ACCESS_TOKEN_EXPIRES_IN, 0)
     }
     fun saveRefreshToken(token: String, expiresIn: Int) {
         with(sharedPreferences.edit()) {
-            putString("refresh_token", token)
-            putLong("refresh_token_expires_in", System.currentTimeMillis() / 1000 + expiresIn * 60) // Convertendo minutos para segundos
+            putString(KEY_REFRESH_TOKEN, token)
+            putLong(KEY_REFRESH_TOKEN_EXPIRES_IN, System.currentTimeMillis() + expiresIn * 1000L)
             apply()
         }
     }
 
     fun getRefreshToken(): String? {
-        return sharedPreferences.getString("refresh_token", null)
+        return sharedPreferences.getString(KEY_REFRESH_TOKEN, null)
     }
 
     fun getRefreshTokenExpiresIn(): Long {
-        return sharedPreferences.getLong("refresh_token_expires_in", 0)
+        return sharedPreferences.getLong(KEY_REFRESH_TOKEN_EXPIRES_IN, 0)
     }
 
     fun removeTokens() {
         val editor = sharedPreferences.edit()
-        editor.remove("access_token")
-        editor.remove("access_token_expires_in")
-        editor.remove("refresh_token")
-        editor.remove("refresh_token_expires_in")
+        editor.remove(KEY_ACCESS_TOKEN)
+        editor.remove(KEY_ACCESS_TOKEN_EXPIRES_IN)
+        editor.remove(KEY_REFRESH_TOKEN)
+        editor.remove(KEY_REFRESH_TOKEN_EXPIRES_IN)
         editor.apply()
     }
 }

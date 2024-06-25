@@ -36,6 +36,6 @@ data class Trip(
     @NonNull @ColumnInfo(name = "longitude") var longitude: String = "",
     @NonNull @ColumnInfo(name = "is_shared") var isShared: Boolean = false,
     @NonNull @ColumnInfo(name = "created_at") var createdAt: Date = Date(),
-    @NonNull @ColumnInfo(name = "delete_at") var deleteAt: Date = Date(),
+    @ColumnInfo(name = "deleted_at") var deleteAt: Date? = null,
     @NonNull @ColumnInfo(name = "updated_at") var updatedAt: Date = Date()
 ) : Parcelable

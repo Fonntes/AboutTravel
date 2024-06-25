@@ -26,7 +26,7 @@ data class Media(
     @NonNull @ColumnInfo(name = "location_id") var locationId: Int = 0,
     @NonNull @ColumnInfo(name = "label") var label: String = "",
     @NonNull @ColumnInfo(name = "path") var path: String = "",
-    @NonNull @ColumnInfo(name = "deleted_at") var deletedAt: Date = Date(),
     @NonNull @ColumnInfo(name = "created_at") var createdAt: Date = Date(),
-    @NonNull @ColumnInfo(name = "updated_at") var updatedAt: Date = Date()
+    @NonNull @ColumnInfo(name = "updated_at") var updatedAt: Date = Date(),
+    @ColumnInfo(name = "deleted_at") var deleteAt: Date? = null
 ) : Parcelable

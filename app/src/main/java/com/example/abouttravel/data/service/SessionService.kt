@@ -19,4 +19,8 @@ class SessionService(private val sessionRepository: SessionRepository) {
     suspend fun delete(session: Session) {
         sessionRepository.delete(session)
     }
+
+    suspend fun deleteAll() {
+        sessionRepository.deleteAll()
+    }
 }

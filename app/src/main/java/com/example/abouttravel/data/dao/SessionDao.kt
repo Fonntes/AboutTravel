@@ -22,4 +22,7 @@ interface SessionDao {
 
     @Delete
     suspend fun deleteSession(session: Session)
+
+    @Query("DELETE FROM session")
+    suspend fun deleteAll()
 }
