@@ -24,6 +24,7 @@ composeBom = "2023.08.00"
 picasso = "2.71828"
 roomCommon = "2.6.1"
 sqlite = "2.4.0"
+playServicesMaps = "19.0.0"
 
 [libraries]
 androidx-appcompat-v170 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
@@ -60,6 +61,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 material-v130alpha03 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
 material-v190 = { module = "com.google.android.material:material", version.ref = "googleMaterial" }
 picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
+play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

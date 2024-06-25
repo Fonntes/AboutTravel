@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:context=".pages.authentication.LoginFragment">
@@ -25,32 +26,63 @@
         android:text="@string/Login"
         android:textSize="40sp" />
 
-    <EditText
-        android:id="@+id/nameField"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameFieldLayout"
         android:layout_width="260dp"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:hint="@string/Name"
-        android:textColorHint="@android:color/black"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:paddingStart="8dp"
-        android:background="@drawable/rounded_corners"
-        android:elevation="4dp"
-        android:layout_marginBottom="12dp" />
-
-    <EditText
-        android:id="@+id/passField"
-        android:layout_width="260dp"
-        android:layout_height="56dp"
-        android:hint="@string/Password"
-        android:textColor="@android:color/black"
-        android:textColorHint="@android:color/black"
-        android:textSize="20sp"
-        android:paddingStart="8dp"
-        android:background="@drawable/rounded_corners"
-        android:elevation="4dp"
         android:layout_marginBottom="12dp"
-        android:inputType="textPassword"/>
+        android:elevation="4dp"
+        android:background="@drawable/rounded_corners"
+        style="@style/NoBorderTextInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameField"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:textColorHint="@android:color/black"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:paddingStart="8dp"
+            style="@style/NoBorderTextInputEditText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordFieldLayout"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Password"
+        android:layout_marginBottom="12dp"
+        android:elevation="4dp"
+        android:background="@drawable/rounded_corners"
+        style="@style/NoBorderTextInputLayout"
+        app:endIconMode="password_toggle"
+        app:endIconDrawable="@drawable/ic_visibility"
+        app:endIconContentDescription="@string/password_toggle_content_description">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordField"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:textColorHint="@android:color/black"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:paddingStart="8dp"
+            android:inputType="textPassword"
+            style="@style/NoBorderTextInputEditText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_dark"
+        android:visibility="gone"
+         />
+
+
 
     <!-- Login Button -->
     <Button

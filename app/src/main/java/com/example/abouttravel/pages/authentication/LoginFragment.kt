@@ -46,13 +46,17 @@ class LoginFragment : Fragment() {
 
     private fun loginUser(view: View) {
         val nameField = view.findViewById<EditText>(R.id.nameField)
-        val passField = view.findViewById<EditText>(R.id.passField)
+        val passField = view.findViewById<EditText>(R.id.passwordField)
+        val errorMessage = view.findViewById<TextView>(R.id.errorMessage)
 
         val username = nameField.text.toString().trim()
         val password = passField.text.toString().trim()
 
+        errorMessage.visibility = View.GONE
+
         if (username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(context, "Por favor, preencha todos os campos!", Toast.LENGTH_SHORT).show()
+            errorMessage.visibility = View.VISIBLE
+            errorMessage.text = getString(R.string.fill_fields_error)
             return
         }
 
@@ -61,7 +65,8 @@ class LoginFragment : Fragment() {
 
             findNavController().navigate(R.id.action_loginFragment_to_homeActivity)
         } else {
-            Toast.makeText(context, "Credenciais inválidas!", Toast.LENGTH_SHORT).show()
+            errorMessage.visibility = View.VISIBLE
+            errorMessage.text = getString(R.string.invalid_credentials_error)
         }
     }
 

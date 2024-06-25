@@ -42,4 +42,7 @@
     <string name="Welcome">Welcome</string>
     <string name="no_wifi">No conection</string>
     <string name="selected_item">Selected Item</string>
+    <string name="fill_fields_error">Please fill in all fields!</string>
+    <string name="invalid_credentials_error">Invalid credentials</string>
+    <string name="Select_Country">Select Country</string>
 </resources>

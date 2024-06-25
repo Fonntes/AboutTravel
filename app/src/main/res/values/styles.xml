@@ -3,4 +3,13 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
     </style>
+
+    <style name="NoBorderTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundMode">none</item>
+        <item name="boxStrokeWidth">0dp</item>
+    </style>
+
+    <style name="NoBorderTextInputEditText">
+        <item name="android:background">@null</item>
+    </style>
 </resources>

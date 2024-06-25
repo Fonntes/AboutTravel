@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         val networkChangeReceiver = NetworkChanger()
         registerReceiver(networkChangeReceiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
 
+        
         val tokenManager = TokenManager(this)
         //tokenManager.removeTokens()
 
@@ -81,5 +82,7 @@ class MainActivity : AppCompatActivity() {
                 }
             })
         }
+
+
     }
 }
