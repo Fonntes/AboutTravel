@@ -1,10 +1,9 @@
 package com.example.abouttravel.api
 import com.example.abouttravel.BuildConfig
-import com.example.abouttravel.data.entities.CreateUser
+import com.example.abouttravel.helpers.CreateUser
 import com.example.abouttravel.data.entities.Local
-import com.example.abouttravel.data.entities.Session
 import com.example.abouttravel.data.entities.Trip
-import com.example.abouttravel.data.entities.UserLogin
+import com.example.abouttravel.helpers.UserLogin
 import okhttp3.ResponseBody
 import okhttp3.OkHttpClient
 import retrofit2.Call

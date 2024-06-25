@@ -17,7 +17,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        //buildConfigField("String", "APP_URL", "\"http://10.0.2.2:59565/api/\"")
+        //buildConfigField("String", "APP_URL", "\"http://10.0.2.2:62536/api/\"")
         buildConfigField("String", "APP_URL", "\"https://commov.riftweb.com/api/\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

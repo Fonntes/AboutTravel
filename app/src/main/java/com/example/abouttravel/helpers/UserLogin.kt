@@ -1,4 +1,4 @@
-package com.example.abouttravel.data.entities
+package com.example.abouttravel.helpers
 
 class UserLogin (
     val username: String,

@@ -49,7 +49,7 @@ class LoginFragment : Fragment() {
 
         val buttonToRegister = view.findViewById<TextView>(R.id.login_to_register)
         val buttonToHome = view.findViewById<Button>(R.id.buttonLoginToHome)
-        //tokenManager.removeTokens()
+        tokenManager.removeTokens()
         val accessToken = tokenManager.getAccessToken()
 
         if (network) {
@@ -159,27 +159,22 @@ class LoginFragment : Fragment() {
                                     email = userObject.getString("email"),
                                     profilePicture = userObject.getString("profile_picture"),
                                     description = userObject.getString("description"),
-
-                                    createdAt = DateConverter.fromString(userObject.getString("created_at"))
-                                        ?: Date(),
-                                    updatedAt = DateConverter.fromString(userObject.getString("updated_at"))
-                                        ?: Date(),
+                                    createdAt = DateConverter.fromString(userObject.getString("created_at")) ?: Date(),
+                                    updatedAt = DateConverter.fromString(userObject.getString("updated_at")) ?: Date(),
                                     //deleteAt = if (userObject.isNull("deleted_at")) Date() else DateConverter.fromString(userObject.getString("deleted_at")) ?: Date()
-
                                 )
                                 sessionViewModel.deleteAll()
                                 sessionViewModel.insert(session)
                                 println("Session: $session")
-
                                 findNavController().navigate(R.id.action_loginFragment_to_homeActivity)
-                            }
-                        } catch (e: JSONException) {
-                            Toast.makeText(
-                                requireContext(),
-                                "Erro ao analisar a resposta da API",
+                                }
+                            } catch (e: JSONException) {
+                                Toast.makeText(
+                                    requireContext(),
+                                    "Erro ao analisar a resposta da API",
                                 Toast.LENGTH_SHORT
-                            ).show()
-                        }
+                                ).show()
+                            }
                         } else {
                         Toast.makeText(
                             requireContext(),
