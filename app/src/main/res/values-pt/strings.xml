@@ -35,4 +35,7 @@
     <string name="Welcome">Bem-Vindo</string>
     <string name="no_wifi">Sem conecção</string>
     <string name="selected_item">Item Selecionado</string>
+    <string name="fill_fields_error">Por favor, preencha todos os campos!</string>
+    <string name="invalid_credentials_error">Credenciais inválidas!</string>
+    <string name="Select_Country">Selecionar pais:</string>
 </resources>

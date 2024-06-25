@@ -73,6 +73,7 @@ class LoginFragment : Fragment() {
         buttonToHome.setOnClickListener {
             loginUser(view)
         }
+
         return view
     }
 
@@ -81,14 +82,17 @@ class LoginFragment : Fragment() {
         val tokenManager = TokenManager(requireContext())
 
         val nameField = view.findViewById<EditText>(R.id.nameField)
-        val passField = view.findViewById<EditText>(R.id.passField)
+        val passField = view.findViewById<EditText>(R.id.passwordField)
+        val errorMessage = view.findViewById<TextView>(R.id.errorMessage)
 
         val username = nameField.text.toString().trim()
         val password = passField.text.toString().trim()
 
+        errorMessage.visibility = View.GONE
+
         if (username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(context, "Por favor, preencha todos os campos!", Toast.LENGTH_SHORT)
-                .show()
+            errorMessage.visibility = View.VISIBLE
+            errorMessage.text = getString(R.string.fill_fields_error)
             return
         }
 
@@ -116,9 +120,10 @@ class LoginFragment : Fragment() {
                     println("Authentication Access token: ${tokenManager.getAccessToken()}")
                     println("Authentication Refresh token: $refreshToken")
                     getSession()
-                }else
-                Toast.makeText(requireContext(), "Login failed: ${response.message()}", Toast.LENGTH_SHORT).show()
-            }
+                }else{
+                    Toast.makeText(requireContext(), "Login failed: ${response.message()}", Toast.LENGTH_SHORT).show()
+                }
+              }
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                 Handler(Looper.getMainLooper()).post {
                     Toast.makeText(requireContext(), "Login failed: ${t.message}", Toast.LENGTH_SHORT).show()
@@ -155,8 +160,10 @@ class LoginFragment : Fragment() {
                                     profilePicture = userObject.getString("profile_picture"),
                                     description = userObject.getString("description"),
 
-                                    createdAt = DateConverter.fromString(userObject.getString("created_at")) ?: Date(),
-                                    updatedAt = DateConverter.fromString(userObject.getString("updated_at")) ?: Date(),
+                                    createdAt = DateConverter.fromString(userObject.getString("created_at"))
+                                        ?: Date(),
+                                    updatedAt = DateConverter.fromString(userObject.getString("updated_at"))
+                                        ?: Date(),
                                     //deleteAt = if (userObject.isNull("deleted_at")) Date() else DateConverter.fromString(userObject.getString("deleted_at")) ?: Date()
 
                                 )
@@ -165,12 +172,6 @@ class LoginFragment : Fragment() {
                                 println("Session: $session")
 
                                 findNavController().navigate(R.id.action_loginFragment_to_homeActivity)
-                            } else {
-                                Toast.makeText(
-                                    requireContext(),
-                                    "Erro na autenticação",
-                                    Toast.LENGTH_SHORT
-                                ).show()
                             }
                         } catch (e: JSONException) {
                             Toast.makeText(
@@ -179,23 +180,23 @@ class LoginFragment : Fragment() {
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
-                    } else {
+                        } else {
                         Toast.makeText(
                             requireContext(),
                             "Erro na requisição à API",
                             Toast.LENGTH_SHORT
                         ).show()
+                        }
                     }
-                }
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                Toast.makeText(requireContext(), "Erro de rede", Toast.LENGTH_SHORT).show()
+            }
+        })
+    } else {
+    Toast.makeText(requireContext(), "Sem conexão com a internet", Toast.LENGTH_SHORT)
+        .show()
+    }
 
-                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                    Toast.makeText(requireContext(), "Erro de rede", Toast.LENGTH_SHORT).show()
-                }
-            })
-        } else {
-            Toast.makeText(requireContext(), "Sem conexão com a internet", Toast.LENGTH_SHORT)
-                .show()
-        }
     }
 }
 

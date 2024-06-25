@@ -31,8 +31,7 @@ class HomeFragment : Fragment() {
 
         recyclerView = view.findViewById(R.id.recyclerView)
 
-        // Configuração do GridLayoutManager
-        val numberOfColumns = calculateNumberOfColumns(110) // 110 é a largura do item em dp
+            val numberOfColumns = calculateNumberOfColumns(110) // 110 é a largura do item em dp
         recyclerView.layoutManager = GridLayoutManager(requireContext(), numberOfColumns)
 
         travelAdapter = TravelAdapter(emptyList()) { trip ->
@@ -41,7 +40,6 @@ class HomeFragment : Fragment() {
         }
         recyclerView.adapter = travelAdapter
 
-        // Configuração do ViewModel para obter dados de viagens
         tripViewModel = ViewModelProvider(this).get(TripViewModel::class.java)
         tripViewModel.allTrips.observe(viewLifecycleOwner, Observer { trips ->
             trips?.let {
@@ -72,7 +70,6 @@ class HomeFragment : Fragment() {
         return view
     }
 
-    // Função para calcular o número de colunas com base na largura da tela e a largura do item
     private fun calculateNumberOfColumns(itemWidthInDp: Int): Int {
         val displayMetrics = resources.displayMetrics
         val itemWidthInPx = itemWidthInDp * displayMetrics.density
