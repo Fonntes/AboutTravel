@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:gravity="center"
     tools:context=".pages.authentication.RegisterFragment">
@@ -34,7 +34,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="20dp"
             android:gravity="center"
             android:textColor="@android:color/black"
             android:text="@string/Register"
@@ -45,34 +45,50 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/nameField"
-                android:layout_width="230dp"
-                android:layout_height="56dp"
-                android:textColorHint="@android:color/black"
-                android:textColor="@android:color/black"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameFieldLayout"
+                style="@style/NoBorderTextInputLayout"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_corners"
+                android:elevation="4dp"
                 android:hint="@string/Name"
-                android:textSize="20sp"
-                android:paddingStart="8dp"
-                android:background="@color/grey"
-                android:elevation="4dp"
-                android:layout_marginBottom="12dp"
-                android:layout_marginRight="12dp"
-                />
+                android:textColorHint="@android:color/black">
 
-            <EditText
-                android:id="@+id/passField"
-                android:layout_width="230dp"
-                android:layout_height="56dp"
-                android:textColorHint="@android:color/black"
-                android:textColor="@android:color/black"
-                android:hint="@string/Password"
-                android:textSize="20sp"
-                android:paddingStart="8dp"
-                android:background="@color/grey"
-                android:elevation="4dp"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameField"
+                    style="@style/NoBorderTextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:paddingStart="8dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/usernameFieldLayout"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/Username"
+                android:layout_marginStart="15dp"
                 android:layout_marginBottom="12dp"
-                />
+                android:elevation="4dp"
+                android:textColorHint="@android:color/black"
+                android:background="@drawable/rounded_corners"
+                style="@style/NoBorderTextInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/usernameField"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:textColorHint="@android:color/black"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:paddingStart="8dp"
+                    style="@style/NoBorderTextInputEditText" />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
         </LinearLayout>
@@ -82,45 +98,100 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/emailField"
-                android:layout_width="230dp"
-                android:layout_height="56dp"
-                android:textColorHint="@android:color/black"
-                android:textColor="@android:color/black"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailFieldLayout"
+                style="@style/NoBorderTextInputLayout"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_corners"
+                android:elevation="4dp"
                 android:hint="@string/Email"
-                android:textSize="20sp"
-                android:paddingStart="8dp"
-                android:background="@color/grey"
-                android:elevation="4dp"
-                android:layout_marginBottom="12dp"
-                android:layout_marginRight="12dp"
-                />
+                android:textColorHint="@android:color/black">
 
-            <EditText
-                android:id="@+id/confirmPassField"
-                android:layout_width="230dp"
-                android:layout_height="56dp"
-                android:textColorHint="@android:color/black"
-                android:textColor="@android:color/black"
-                android:hint="@string/Confirm_Password"
-                android:textSize="20sp"
-                android:paddingStart="8dp"
-                android:background="@color/grey"
-                android:elevation="4dp"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailField"
+                    style="@style/NoBorderTextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:paddingStart="8dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordFieldLayout"
+                style="@style/NoBorderTextInputLayout"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                />
+                android:layout_marginStart="15dp"
+                android:background="@drawable/rounded_corners"
+                android:elevation="4dp"
+                android:hint="@string/Password"
+                android:textColorHint="@android:color/black"
+                app:endIconContentDescription="@string/password_toggle_content_description"
+                app:endIconDrawable="@drawable/ic_visibility"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordField"
+                    style="@style/NoBorderTextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:inputType="textPassword"
+                    android:paddingStart="8dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
-        <Button
-            android:id="@+id/buttonRegister"
-            android:layout_width="230dp"
-            android:layout_height="56dp"
-            android:text="@string/Register"
-            android:textSize="28sp"
-            android:backgroundTint="@color/blue"
-            android:layout_marginBottom="12dp"
-            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/confirmPasswordFieldLayout"
+                style="@style/NoBorderTextInputLayout"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_corners"
+                android:elevation="4dp"
+                android:hint="@string/Confirm_Password"
+                android:textColorHint="@android:color/black"
+                app:endIconContentDescription="@string/password_toggle_content_description"
+                app:endIconDrawable="@drawable/ic_visibility"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/confirmPassField"
+                    style="@style/NoBorderTextInputEditText"
+                    android:layout_width="229dp"
+                    android:layout_height="56dp"
+                    android:inputType="textPassword"
+                    android:paddingStart="8dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/buttonRegister"
+                android:layout_width="230dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="15dp"
+                android:text="@string/Register"
+                android:textSize="28sp"
+                android:backgroundTint="@color/blue"
+                android:layout_marginBottom="12dp"
+                />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

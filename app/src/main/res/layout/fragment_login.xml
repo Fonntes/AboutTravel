@@ -30,9 +30,10 @@
         android:id="@+id/nameFieldLayout"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:hint="@string/Name"
+        android:hint="@string/Username"
         android:layout_marginBottom="12dp"
         android:elevation="4dp"
+        android:textColorHint="@android:color/black"
         android:background="@drawable/rounded_corners"
         style="@style/NoBorderTextInputLayout">
 
@@ -55,6 +56,7 @@
         android:hint="@string/Password"
         android:layout_marginBottom="12dp"
         android:elevation="4dp"
+        android:textColorHint="@android:color/black"
         android:background="@drawable/rounded_corners"
         style="@style/NoBorderTextInputLayout"
         app:endIconMode="password_toggle"
