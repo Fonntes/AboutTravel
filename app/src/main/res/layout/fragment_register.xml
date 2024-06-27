@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:context=".pages.authentication.RegisterFragment">
@@ -12,7 +12,7 @@
         android:id="@+id/image_view"
         android:layout_width="350dp"
         android:layout_height="150dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="0dp"
         android:layout_marginBottom="15dp"
         android:src="@mipmap/logo_2_foreground"
         android:scaleType="centerCrop" />
@@ -21,67 +21,139 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:textColor="@android:color/black"
         android:text="@string/Register"
         android:textSize="40sp" />
 
-    <EditText
-        android:id="@+id/nameField"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameFieldLayout"
         android:layout_width="260dp"
-        android:layout_height="56dp"
-        android:textColorHint="@android:color/black"
-        android:textColor="@android:color/black"
+        android:layout_height="wrap_content"
         android:hint="@string/Name"
-        android:textSize="20sp"
-        android:paddingStart="8dp"
-        android:background="@drawable/rounded_corners"
-        android:elevation="4dp"
         android:layout_marginBottom="12dp"
-        />
-
-    <EditText
-        android:id="@+id/emailField"
-        android:layout_width="260dp"
-        android:layout_height="56dp"
+        android:elevation="4dp"
         android:textColorHint="@android:color/black"
-        android:textColor="@android:color/black"
+        android:background="@drawable/rounded_corners"
+        style="@style/NoBorderTextInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameField"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:textColorHint="@android:color/black"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:paddingStart="8dp"
+            style="@style/NoBorderTextInputEditText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/usernameFieldLayout"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Username"
+        android:layout_marginBottom="12dp"
+        android:elevation="4dp"
+        android:textColorHint="@android:color/black"
+        android:background="@drawable/rounded_corners"
+        style="@style/NoBorderTextInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/usernameField"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:textColorHint="@android:color/black"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:paddingStart="8dp"
+            style="@style/NoBorderTextInputEditText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailFieldLayout"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
         android:hint="@string/Email"
-        android:textSize="20sp"
-        android:paddingStart="8dp"
-        android:background="@drawable/rounded_corners"
-        android:elevation="4dp"
         android:layout_marginBottom="12dp"
-        />
-
-    <EditText
-        android:id="@+id/passField"
-        android:layout_width="260dp"
-        android:layout_height="56dp"
+        android:elevation="4dp"
         android:textColorHint="@android:color/black"
-        android:textColor="@android:color/black"
+        android:background="@drawable/rounded_corners"
+        style="@style/NoBorderTextInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailField"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:textColorHint="@android:color/black"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:paddingStart="8dp"
+            style="@style/NoBorderTextInputEditText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordFieldLayout"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
         android:hint="@string/Password"
-        android:textSize="20sp"
-        android:paddingStart="8dp"
-        android:background="@drawable/rounded_corners"
-        android:elevation="4dp"
         android:layout_marginBottom="12dp"
+        android:elevation="4dp"
+        android:textColorHint="@android:color/black"
+        android:background="@drawable/rounded_corners"
+        style="@style/NoBorderTextInputLayout"
+        app:endIconMode="password_toggle"
+        app:endIconDrawable="@drawable/ic_visibility"
+        app:endIconContentDescription="@string/password_toggle_content_description">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordField"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:textColorHint="@android:color/black"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:paddingStart="8dp"
+            android:inputType="textPassword"
+            style="@style/NoBorderTextInputEditText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmPasswordFieldLayout"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Confirm_Password"
+        android:layout_marginBottom="12dp"
+        android:elevation="4dp"
+        android:textColorHint="@android:color/black"
+        android:background="@drawable/rounded_corners"
+        style="@style/NoBorderTextInputLayout"
+        app:endIconMode="password_toggle"
+        app:endIconDrawable="@drawable/ic_visibility"
+        app:endIconContentDescription="@string/password_toggle_content_description">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmPassField"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:textColorHint="@android:color/black"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:paddingStart="8dp"
+            android:inputType="textPassword"
+            style="@style/NoBorderTextInputEditText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_dark"
+        android:visibility="gone"
         />
 
-    <EditText
-        android:id="@+id/confirmPassField"
-        android:layout_width="260dp"
-        android:layout_height="56dp"
-        android:textColorHint="@android:color/black"
-        android:textColor="@android:color/black"
-        android:hint="@string/Confirm_Password"
-        android:textSize="20sp"
-        android:paddingStart="8dp"
-        android:background="@drawable/rounded_corners"
-        android:elevation="4dp"
-        android:layout_marginBottom="12dp"
-        />
 
     <Button
         android:id="@+id/buttonRegister"

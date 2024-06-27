@@ -176,20 +176,27 @@
                             style="@style/NoBorderTextInputEditText" />
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <TextView
-                        android:id="@+id/localField"
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/localFieldLayout"
+                        android:layout_width="300dp"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginEnd="80dp"
-                        android:layout_marginBottom="10dp"
-                        android:textColor="@color/black"
-                        android:text="@string/Select_Country"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:hint="@string/Select_Country"
+                        android:layout_marginBottom="12dp"
+                        android:elevation="4dp"
+                        android:textColorHint="@color/black"
+                        android:background="@drawable/rounded_corners"
+                        style="@style/NoBorderTextInputLayout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/localField"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:textColorHint="@android:color/black"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"
+                            android:paddingStart="8dp"
+                            style="@style/NoBorderTextInputEditText" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <!--<include
                         android:id="@+id/map"

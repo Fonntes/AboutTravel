@@ -46,7 +46,7 @@ class LoginFragment : Fragment() {
 
     private fun loginUser(view: View) {
         val nameField = view.findViewById<EditText>(R.id.nameField)
-        val passField = view.findViewById<EditText>(R.id.passField)
+        val passField = view.findViewById<EditText>(R.id.passwordField)
 
         val username = nameField.text.toString().trim()
         val password = passField.text.toString().trim()
