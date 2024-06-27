@@ -104,15 +104,16 @@
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
-            <Button
-                android:id="@+id/Language"
+            <Spinner
+                android:id="@+id/spinner"
                 android:layout_width="200dp"
-                android:layout_height="56dp"
-                android:layout_marginTop="8dp"
-                android:backgroundTint="@color/grey"
-                android:text="@string/Language"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@color/grey"
+                android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:textSize="20sp"
+                android:padding="8dp"/>
 
             <Button
                 android:id="@+id/AssociatedAccount"

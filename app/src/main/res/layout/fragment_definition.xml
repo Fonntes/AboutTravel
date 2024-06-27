@@ -6,10 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".pages.menus.DefinitionFragment">
 
-    <!-- Layout de fundo -->
     <include layout="@layout/background" />
 
-    <!-- Conteúdo principal -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

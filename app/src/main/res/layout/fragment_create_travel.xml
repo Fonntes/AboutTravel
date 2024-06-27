@@ -185,10 +185,13 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <com.google.android.gms.maps.MapView
-                        android:id="@+id/mapView2"
+                    <!--<include
+                        android:id="@+id/map"
+                        layout="@layout/fragment_maps"
                         android:layout_width="300dp"
-                        android:layout_height="300dp" />
+                        android:layout_height="300dp"
+                        />-->
+
 
                     <TextView
                         android:layout_width="wrap_content"
