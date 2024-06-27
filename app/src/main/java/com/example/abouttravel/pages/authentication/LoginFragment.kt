@@ -38,12 +38,13 @@ class LoginFragment : Fragment() {
 
     private val sessionViewModel: SessionViewModel by viewModels()
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val network = Network().isNetworkAvailable(requireContext())
+        val network = Network(requireContext()).isNetworkAvailable()
         val tokenManager = TokenManager(requireContext())
         val view = inflater.inflate(R.layout.fragment_login, container, false)
 
@@ -134,7 +135,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun getSession() {
-        if (Network().isNetworkAvailable(requireContext())) {
+        if (Network(requireContext()).isNetworkAvailable()) {
             val tokenManager = TokenManager(requireContext())
             val apiServiceWithToken = ApiService(tokenManager)
             val callGetMe = apiServiceWithToken.getMe()

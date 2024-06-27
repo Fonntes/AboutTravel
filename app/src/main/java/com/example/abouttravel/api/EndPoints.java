@@ -1,10 +1,12 @@
 package com.example.abouttravel.api;
 
+import com.example.abouttravel.helpers.ApiResponseCreateTrip;
 import com.example.abouttravel.helpers.CreateUser;
 import com.example.abouttravel.data.entities.Local;
 import com.example.abouttravel.data.entities.Trip;
 import com.example.abouttravel.helpers.UserLogin;
 
+import java.util.List;
 import java.util.Map;
 
 import okhttp3.ResponseBody;
@@ -14,6 +16,7 @@ import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.PATCH;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface EndPoints {
 
@@ -52,7 +55,7 @@ public interface EndPoints {
     //trips
 
     @GET("trips")
-    Call<ResponseBody> trips();
+    Call<List<Trip>> trips();
 
     @GET("trips/{id}")
     Call<ResponseBody> trip();
@@ -61,10 +64,10 @@ public interface EndPoints {
     Call<ResponseBody> createTrip(@Body Trip trip);
 
     @PATCH("trips/{id}")
-    Call<ResponseBody> updateTrip(@Body Trip trip);
+    Call<ResponseBody> updateTrip(@Path("id") int id, @Body Trip trip);
 
     @DELETE("trips/{id}")
-    Call<ResponseBody> deleteTrip();
+    Call<ResponseBody> deleteTrip(@Path("id") int id);
 
     //locals
 

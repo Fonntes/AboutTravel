@@ -4,36 +4,25 @@ import android.os.Parcelable
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
-import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 import java.util.Date
 
 @Parcelize
-@Entity(tableName = "trips",
-    foreignKeys = [
-        ForeignKey(
-            entity = Session::class,
-            parentColumns = ["id"],
-            childColumns = ["user_id"],
-            onDelete = ForeignKey.CASCADE
-        )
-    ]
-)
-
+@Entity(tableName = "trips")
 
 data class Trip(
-    @PrimaryKey(autoGenerate = true) var id: Int = 0,
+    @PrimaryKey var id: Int = 0,
     @NonNull @ColumnInfo(name = "user_id") var userId: Int = 0,
-    @NonNull @ColumnInfo(name = "label") var title: String = "",
-    @NonNull @ColumnInfo(name = "country") var country: String = "",
-    @NonNull @ColumnInfo(name = "location") var location: String = "",
-    @NonNull @ColumnInfo(name = "initialDate") var initialdate: Date = Date(),
-    @NonNull @ColumnInfo(name = "endDate") var enddate: Date = Date(),
-    @NonNull @ColumnInfo(name = "description") var description: String ="",
-    @NonNull @ColumnInfo(name = "file_path") var image: String = "",
-    @NonNull @ColumnInfo(name = "latitude") var latitude: String = "",
-    @NonNull @ColumnInfo(name = "longitude") var longitude: String = "",
+    @NonNull @ColumnInfo(name = "label") var label: String = "",
+    @ColumnInfo(name = "country") var country_iso2: String? = null,
+    @ColumnInfo(name = "location") var location: String? = null,
+    @ColumnInfo(name = "initialDate") var initial_date: Date? = Date(),
+    @ColumnInfo(name = "endDate") var end_date: Date? = Date(),
+    @ColumnInfo(name = "description") var description: String? = null,
+    @ColumnInfo(name = "file_path") var image: String? = null,
+    @ColumnInfo(name = "latitude") var latitude: String? = null,
+    @ColumnInfo(name = "longitude") var longitude: String? = null,
     @NonNull @ColumnInfo(name = "is_shared") var isShared: Boolean = false,
     @NonNull @ColumnInfo(name = "created_at") var createdAt: Date = Date(),
     @ColumnInfo(name = "deleted_at") var deleteAt: Date? = null,

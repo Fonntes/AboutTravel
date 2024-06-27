@@ -131,11 +131,11 @@ class CreateTravelFragment : Fragment() {
 
             val trip = Trip(
                 userId = session.id,
-                title = title,
+                label = title,
                 description = description,
-                initialdate = initialDate,
-                enddate = finalDate,
-                country = "Unknown",
+                initial_date = initialDate,
+                end_date = finalDate,
+                country_iso2 = "Unknown",
                 location = location,
                 latitude = "0.0",
                 longitude = "0.0",

@@ -12,7 +12,7 @@ class NetworkChanger : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action == ConnectivityManager.CONNECTIVITY_ACTION) {
-            val isConnected = Network().isNetworkAvailable(context)
+            val isConnected = Network(context).isNetworkAvailable()
             // Obtém o FragmentManager da sua Activity
             val fragmentManager = (context as AppCompatActivity).supportFragmentManager
 

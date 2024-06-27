@@ -1,12 +1,17 @@
 package com.example.abouttravel.api
+import android.util.Log
 import com.example.abouttravel.BuildConfig
 import com.example.abouttravel.helpers.CreateUser
 import com.example.abouttravel.data.entities.Local
 import com.example.abouttravel.data.entities.Trip
+import com.example.abouttravel.helpers.ApiResponseCreateTrip
 import com.example.abouttravel.helpers.UserLogin
+import com.google.gson.Gson
+import com.google.gson.JsonParseException
 import okhttp3.ResponseBody
 import okhttp3.OkHttpClient
 import retrofit2.Call
+import retrofit2.HttpException
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -78,7 +83,7 @@ class ApiService(private val tokenManager: TokenManager? = null) {
 
     //trip
 
-    fun getTrips(): Call<ResponseBody> {
+    fun getTrips(): Call<List<Trip>> {
         return service.trips()
     }
 
@@ -91,11 +96,11 @@ class ApiService(private val tokenManager: TokenManager? = null) {
     }
 
     fun updateTrip(trip: Trip): Call<ResponseBody> {
-        return service.updateTrip(trip)
+        return service.updateTrip(trip.id,trip)
     }
 
     fun deleteTrip(id: Int): Call<ResponseBody> {
-        return service.deleteTrip()
+        return service.deleteTrip(id)
     }
 
     //locals

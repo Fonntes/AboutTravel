@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import com.example.abouttravel.data.dao.SessionDao
 import com.example.abouttravel.data.entities.Session
 
-class SessionRepository(private val sessionDao: SessionDao): BaseRepository() {
+class SessionRepository(private val sessionDao: SessionDao) {
 
     val session: LiveData<Session> = sessionDao.getSession()
 

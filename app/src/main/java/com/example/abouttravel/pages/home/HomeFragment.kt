@@ -1,6 +1,7 @@
 package com.example.abouttravel.pages.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,8 +14,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.abouttravel.R
 import com.example.abouttravel.adapters.TravelAdapter
+import com.example.abouttravel.data.entities.Trip
+import com.example.abouttravel.data.vm.SessionViewModel
 import com.example.abouttravel.data.vm.TripViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlin.math.log
 
 class HomeFragment : Fragment() {
 
@@ -26,6 +30,15 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val sessionViewModel = ViewModelProvider(this).get(SessionViewModel::class.java)
+        sessionViewModel.session.observe(viewLifecycleOwner) { session ->
+            if (session != null) {
+                Log.d("SessionViewModel", "Session updated: ${session.id},,${session.name}, ${session.email}")
+            } else {
+                Log.d("SessionViewModel", "Session is null")
+            }
+        }
 
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
@@ -46,6 +59,31 @@ class HomeFragment : Fragment() {
                 travelAdapter.updateData(it)
             }
         })
+
+        tripViewModel.refreshTrips()
+
+        val trip = Trip()
+
+        trip.label = "test"
+        trip.location = "ROMA"
+        trip.country_iso2 = "PT"
+
+        Log.e("CreateTrip", "Cum:$trip")
+
+        val trip2 = Trip()
+
+        trip2.id = 4
+        trip2.label = "help"
+        trip2.location = "ROMA"
+        trip2.country_iso2 = "PT"
+
+        //tripViewModel.createTripApi(trip)
+
+        tripViewModel.updateTripApi(trip2)
+
+        tripViewModel.refreshTrips()
+
+        tripViewModel.deleteTripApi(28)
 
         val add = view.findViewById<ImageView>(R.id.addTravel)
         add.setOnClickListener {

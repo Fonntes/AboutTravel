@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import com.example.abouttravel.data.dao.MediaDao
 import com.example.abouttravel.data.entities.Media
 
-class MediaRepository(private val mediaDao: MediaDao): BaseRepository() {
+class MediaRepository(private val mediaDao: MediaDao) {
 
     val allMedia: LiveData<List<Media>> = mediaDao.getAllMedias()
 

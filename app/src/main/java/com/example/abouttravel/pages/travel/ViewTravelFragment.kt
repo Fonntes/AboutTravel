@@ -14,6 +14,7 @@ import com.example.abouttravel.data.entities.Local
 import com.example.abouttravel.data.entities.Media
 import com.example.abouttravel.data.entities.Trip
 import com.example.abouttravel.data.entities.UserLocalRatings
+import com.example.abouttravel.data.vm.TripViewModel
 import com.example.abouttravel.databinding.FragmentViewTravelBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.text.SimpleDateFormat
@@ -60,10 +61,10 @@ class ViewTravelFragment : Fragment() {
 
     private fun displayTripDetails(trip: Trip) {
         binding.profileImage1.setImageResource(R.drawable.profile)
-        binding.tripTitle.text = trip.title
+        binding.tripTitle.text = trip.label
         binding.tripLocation.text = trip.location
         val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
-        val formattedDate = dateFormat.format(trip.initialdate)
+        val formattedDate = dateFormat.format(trip.initial_date)
         binding.tripDate.text = formattedDate
         binding.tripDescription.text = trip.description
     }

@@ -22,14 +22,14 @@ class TravelAdapter(
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val travel = travels[position]
-        holder.travel.text = travel.title
-        if (travel.location.isNotBlank()){
+        holder.travel.text = travel.label
+        if (travel.location?.isNotBlank() == true){
             holder.places.text = travel.location
         } else {
             holder.places.text = "Unknown"
         }
 
-        if (travel.image.isNotBlank()) {
+        if (travel.image?.isNotBlank() == true) {
             Picasso.get().load(travel.image).into(holder.image)
         } else {
             holder.image.setImageResource(R.drawable.profile)

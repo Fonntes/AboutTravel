@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import com.example.abouttravel.data.dao.LocalTypeDao
 import com.example.abouttravel.data.entities.LocalType
 
-class LocalTypeRepository ( private val localTypeDao: LocalTypeDao): BaseRepository() {
+class LocalTypeRepository ( private val localTypeDao: LocalTypeDao) {
 
     val allLocalTypes: LiveData<List<LocalType>> = localTypeDao.getAllLocalTypes()
 
