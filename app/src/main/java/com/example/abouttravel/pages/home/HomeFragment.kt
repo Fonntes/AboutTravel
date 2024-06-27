@@ -60,6 +60,8 @@ class HomeFragment : Fragment() {
             }
         })
 
+
+        // codigo de teste
         tripViewModel.refreshTrips()
 
         val trip = Trip()
@@ -68,7 +70,7 @@ class HomeFragment : Fragment() {
         trip.location = "ROMA"
         trip.country_iso2 = "PT"
 
-        Log.e("CreateTrip", "Cum:$trip")
+        Log.e("CreateTrip", "TEST:$trip")
 
         val trip2 = Trip()
 
@@ -84,6 +86,8 @@ class HomeFragment : Fragment() {
         tripViewModel.refreshTrips()
 
         tripViewModel.deleteTripApi(28)
+
+        // fim do codigo de teste
 
         val add = view.findViewById<ImageView>(R.id.addTravel)
         add.setOnClickListener {

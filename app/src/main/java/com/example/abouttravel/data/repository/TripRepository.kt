@@ -37,7 +37,7 @@ class TripRepository(
 
     fun refreshTrips(viewModelScope: CoroutineScope) {
         Log.d("TripRepository", "Refreshing trips...")
-        apiService.getTrips().enqueue(object : Callback<List<Trip>> { // Change to List<Trip>
+        apiService.getTrips().enqueue(object : Callback<List<Trip>> {
             override fun onResponse(call: Call<List<Trip>>, response: Response<List<Trip>>) {
                 if (response.isSuccessful) {
                     val trips = response.body() ?: emptyList()
