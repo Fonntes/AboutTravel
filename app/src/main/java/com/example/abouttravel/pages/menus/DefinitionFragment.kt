@@ -15,7 +15,6 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.abouttravel.MainActivity
 import com.example.abouttravel.R
 import com.example.abouttravel.api.TokenManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -109,7 +108,7 @@ class DefinitionFragment : Fragment() {
         editor.apply()
 
         // Navigate to the login screen
-        findNavController().navigate(R.id.action_definitionFragment2_to_loginFragment)
+        findNavController().navigate(R.id.action_definitionFragment_to_loginFragment)
     }
 
     private fun setLocale(langCode: String) {
