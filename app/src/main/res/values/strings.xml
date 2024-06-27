@@ -26,7 +26,7 @@
     <string name="My_Shared">Shared with me</string>
     <string name="CreateTravel">Adding travel</string>
     <string name="InitialDate">Initial date:</string>
-    <string name="FinalDate">Final Date</string>
+    <string name="FinalDate">Final Date:</string>
     <string name="Localization">Localization:</string>
     <string name="Classification">Classification:</string>
     <string name="Definition">Definition</string>
@@ -41,4 +41,8 @@
     <string name="intro_3_text">Share with your friends.</string>
     <string name="Welcome">Welcome</string>
     <string name="no_wifi">No conection</string>
+    <string name="selected_item" translatable="false">Selected Item</string>
+    <string name="fill_fields_error" translatable="false">Please fill in all fields!</string>
+    <string name="invalid_credentials_error" translatable="false">Invalid credentials</string>
+    <string name="Select_Country" translatable="false">Select Country</string>
 </resources>

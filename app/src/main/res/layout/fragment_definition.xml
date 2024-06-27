@@ -6,10 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".pages.menus.DefinitionFragment">
 
-    <!-- Layout de fundo -->
     <include layout="@layout/background" />
 
-    <!-- Conteúdo principal -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -82,15 +80,17 @@
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/Language"
+            <Spinner
+                android:id="@+id/spinner"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:backgroundTint="@color/grey"
-                android:text="@string/Language"
+                android:background="@color/grey"
+                android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:padding="8dp"/>
+
 
             <Button
                 android:id="@+id/AssociatedAccount"

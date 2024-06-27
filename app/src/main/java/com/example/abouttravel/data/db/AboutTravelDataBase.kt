@@ -5,10 +5,24 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.example.abouttravel.data.dao.*
-import com.example.abouttravel.data.entities.*
+import com.example.abouttravel.data.dao.LocalTypeDao
+import com.example.abouttravel.data.dao.LocationDao
+import com.example.abouttravel.data.dao.MediaDao
+import com.example.abouttravel.data.dao.SessionDao
+import com.example.abouttravel.data.dao.TripDao
+import com.example.abouttravel.data.dao.UserLocalRatingsDao
+import com.example.abouttravel.data.dao.UserTripRatingsDao
+import com.example.abouttravel.data.dao.UserTripSharedDao
+import com.example.abouttravel.data.entities.Local
+import com.example.abouttravel.data.entities.LocalType
+import com.example.abouttravel.data.entities.Media
+import com.example.abouttravel.data.entities.Session
+import com.example.abouttravel.data.entities.Trip
+import com.example.abouttravel.data.entities.UserLocalRatings
+import com.example.abouttravel.data.entities.UserTripRatings
+import com.example.abouttravel.data.entities.UserTripShared
 
-@Database(entities = [Trip::class, Local::class, LocalType::class, Media::class ,Session::class, UserTripShared::class, UserTripRatings::class, UserLocalRatings::class ], version = 1)
+@Database(entities = [Trip::class, Local::class, LocalType::class, Media::class ,Session::class, UserTripShared::class, UserTripRatings::class, UserLocalRatings::class ], version = 3)
 @TypeConverters(Converters::class)
 abstract class AboutTravelDataBase : RoomDatabase() {
     abstract fun tripDao(): TripDao

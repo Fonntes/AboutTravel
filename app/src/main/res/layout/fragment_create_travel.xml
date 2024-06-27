@@ -77,101 +77,152 @@
                         android:textSize="24sp"
                         android:textStyle="bold"
                         android:layout_marginTop="12dp"
+                        android:layout_marginBottom="15dp"
                         android:textColor="@color/black"
                         android:text="@string/CreateTravel"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <EditText
-                        android:id="@+id/nameField"
-                        android:layout_width="260dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/rounded_corners"
-                        android:elevation="4dp"
-                        android:textColorHint="@android:color/black"
-                        android:textColor="@android:color/black"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/nameFieldLayout"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
                         android:hint="@string/Name"
-                        android:layout_marginTop="20dp"
-                        android:paddingStart="8dp"
-                        android:textSize="20sp" />
+                        android:layout_marginBottom="12dp"
+                        android:elevation="4dp"
+                        android:textColorHint="@color/black"
+                        android:background="@drawable/rounded_corners"
+                        style="@style/NoBorderTextInputLayout">
 
-                    <EditText
-                        android:id="@+id/descriptionField"
-                        android:layout_width="260dp"
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/nameField"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:textColorHint="@android:color/black"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"
+                            android:paddingStart="8dp"
+                            style="@style/NoBorderTextInputEditText" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/descriptionFieldLayout"
+                        android:layout_width="300dp"
                         android:layout_height="168dp"
-                        android:background="@drawable/rounded_corners"
-                        android:elevation="4dp"
-                        android:textColorHint="@android:color/black"
-                        android:textColor="@android:color/black"
                         android:hint="@string/Description"
-                        android:layout_marginTop="16dp"
-                        android:paddingStart="8dp"
-                        android:textSize="20sp" />
-
-                    <EditText
-                        android:id="@+id/initialDateField"
-                        android:layout_width="260dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/rounded_corners"
+                        android:layout_marginBottom="12dp"
                         android:elevation="4dp"
-                        android:textColorHint="@android:color/black"
-                        android:textColor="@android:color/black"
+                        android:textColorHint="@color/black"
+                        android:background="@drawable/rounded_corners"
+                        style="@style/NoBorderTextInputLayout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/descriptionField"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:textColorHint="@android:color/black"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"
+                            android:paddingStart="8dp"
+                            style="@style/NoBorderTextInputEditText" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/dateFieldLayout"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
                         android:hint="@string/InitialDate"
-                        android:layout_marginTop="16dp"
-                        android:paddingStart="8dp"
-                        android:textSize="20sp" />
-
-                    <EditText
-                        android:id="@+id/finalDateField"
-                        android:layout_width="260dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/rounded_corners"
+                        android:layout_marginBottom="12dp"
                         android:elevation="4dp"
-                        android:textColorHint="@android:color/black"
-                        android:textColor="@android:color/black"
+                        android:textColorHint="@color/black"
+                        android:background="@drawable/rounded_corners"
+                        style="@style/NoBorderTextInputLayout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/initialDateField"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:textColorHint="@android:color/black"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"
+                            android:paddingStart="8dp"
+                            android:drawableEnd="@drawable/calendar"
+                            android:focusable="false"
+                            style="@style/NoBorderTextInputEditText" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/finaldateFieldLayout"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
                         android:hint="@string/FinalDate"
-                        android:layout_marginTop="16dp"
-                        android:paddingStart="8dp"
-                        android:textSize="20sp" />
+                        android:layout_marginBottom="12dp"
+                        android:elevation="4dp"
+                        android:textColorHint="@color/black"
+                        android:background="@drawable/rounded_corners"
+                        style="@style/NoBorderTextInputLayout">
 
-                    <EditText
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/finalDateField"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:textColorHint="@android:color/black"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"
+                            android:paddingStart="8dp"
+                            android:drawableEnd="@drawable/calendar"
+                            android:focusable="false"
+                            style="@style/NoBorderTextInputEditText" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
                         android:id="@+id/localField"
-                        android:layout_width="260dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/rounded_corners"
-                        android:elevation="4dp"
-                        android:textColorHint="@android:color/black"
-                        android:textColor="@android:color/black"
-                        android:hint="@string/Localization"
-                        android:layout_marginTop="16dp"
-                        android:paddingStart="8dp"
-                        android:textSize="20sp" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="80dp"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@color/black"
+                        android:text="@string/Select_Country"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                    <EditText
-                        android:id="@+id/classificationField"
-                        android:layout_width="260dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/rounded_corners"
-                        android:elevation="4dp"
-                        android:textColorHint="@android:color/black"
-                        android:textColor="@android:color/black"
-                        android:hint="@string/Classification"
-                        android:layout_marginTop="16dp"
-                        android:paddingStart="8dp"
-                        android:textSize="20sp" />
+                    <!--<include
+                        android:id="@+id/map"
+                        layout="@layout/fragment_maps"
+                        android:layout_width="300dp"
+                        android:layout_height="300dp"
+                        />-->
+
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="24sp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
                         android:layout_marginTop="16dp"
+                        android:layout_marginRight="80dp"
                         android:textColor="@color/black"
-                        android:text="@string/AddImage"
+                        android:text="@string/Classification"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+
+                    <RatingBar
+                        android:id="@+id/classificationField"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:stepSize="0.5"
+                        android:rating="0"
+                        android:layout_marginStart="8dp"
+                        android:textSize="20sp"
+                        android:progressTint="@color/gold" />
+
 
                     <ImageView
                         android:id="@+id/imageTrip"
@@ -195,8 +246,8 @@
             android:id="@+id/tabbar"
             layout="@layout/tabbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            tools:ignore="ObsoleteLayoutParam" />
     </LinearLayout>
-
 </FrameLayout>
