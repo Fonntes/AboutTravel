@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +11,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.abouttravel.R
 import com.example.abouttravel.api.ApiService
@@ -22,7 +22,6 @@ import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import kotlin.math.log
 
 class RegisterFragment : Fragment() {
 
@@ -49,20 +48,22 @@ class RegisterFragment : Fragment() {
     private fun register(view: View) {
 
         val nameField = view.findViewById<EditText>(R.id.nameField)
+        val userNameField = view.findViewById<EditText>(R.id.usernameField)
         val emailField = view.findViewById<EditText>(R.id.emailField)
         val passField = view.findViewById<EditText>(R.id.passwordField)
         val passConfirmField = view.findViewById<EditText>(R.id.confirmPassField)
 
         val errorMessage = view.findViewById<TextView>(R.id.errorMessage)
 
-        val username = nameField.text.toString().trim()
+        val name = nameField.text.toString().trim()
+        val username = userNameField.text.toString().trim()
         val email = emailField.text.toString().trim()
         val password = passField.text.toString().trim()
         val confirmPassword = passConfirmField.text.toString().trim()
 
         errorMessage.visibility = View.GONE
 
-        if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+        if ( name.isEmpty() || username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             errorMessage.visibility = View.VISIBLE
             errorMessage.text = getString(R.string.fill_fields_error)
             return
@@ -74,7 +75,7 @@ class RegisterFragment : Fragment() {
             return
         }
 
-        val user = CreateUser(username,username,password,email)
+        val user = CreateUser(username,name,password,email)
 
         val apiService = ApiService()
         val call = apiService.registerUser(user)

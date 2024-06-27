@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_loginFragment_to_homeActivity"
             app:destination="@id/homeActivity" />
+        <action
+            android:id="@+id/action_loginFragment_to_noWifiFragment"
+            app:destination="@id/noWifiFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment2"
@@ -32,12 +35,20 @@
         android:label="activity_home"
         tools:layout="@layout/activity_home" />
     <fragment
-        android:id="@+id/definitionFragment2"
+        android:id="@+id/definitionFragment"
         android:name="com.example.abouttravel.pages.menus.DefinitionFragment"
         android:label="fragment_definition"
         tools:layout="@layout/fragment_definition" >
         <action
-            android:id="@+id/action_definitionFragment2_to_loginFragment"
+            android:id="@+id/action_definitionFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noWifiFragment"
+        android:name="com.example.abouttravel.pages.menus.NoWifiFragment"
+        android:label="NoWifiFragment" >
+        <action
+            android:id="@+id/action_noWifiFragment_to_homeActivity"
+            app:destination="@id/homeActivity" />
     </fragment>
 </navigation>

@@ -20,10 +20,6 @@ import com.example.abouttravel.api.TokenManager
 import com.example.abouttravel.data.entities.Session
 import com.example.abouttravel.data.vm.SessionViewModel
 import com.example.abouttravel.helpers.DateConverter
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import java.util.Date
 import com.example.abouttravel.helpers.Network
 import okhttp3.ResponseBody
 import org.json.JSONException
@@ -31,8 +27,7 @@ import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.text.SimpleDateFormat
-import java.util.Locale
+import java.util.Date
 
 class LoginFragment : Fragment() {
 
