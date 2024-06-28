@@ -111,5 +111,17 @@
         <action
             android:id="@+id/action_definitionFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_definitionFragment_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.example.abouttravel.pages.menus.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" >
+        <action
+            android:id="@+id/action_aboutUsFragment_to_definitionFragment"
+            app:destination="@id/definitionFragment" />
     </fragment>
 </navigation>

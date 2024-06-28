@@ -47,4 +47,10 @@
     <string name="Select_Country">Select Country</string>
     <string name="date_error">The end date must be after the start date!</string>
     <string name="field_required">Required field!</string>
+    <string name="AboutUs">About Us</string>
+    <string name="WorkBy">Work Done by:</string>
+    <string name="GonçaloFonte" translatable="false">Gonçalo Fonte</string>
+    <string name="JoaoRocha" translatable="false">João Rocha</string>
+    <string name="HugoGuedes" translatable="false">Hugo Guedes</string>
+    <string name="Back">Back</string>
 </resources>

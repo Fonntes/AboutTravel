@@ -40,4 +40,7 @@
     <string name="Select_Country">Selecionar Pais</string>
     <string name="date_error">A data final deve ser depois da data inicial!</string>
     <string name="field_required">Campo obrigatorio!</string>
+    <string name="AboutUs">Sobre nós</string>
+    <string name="WorkBy">Trabalho realizado por:</string>
+    <string name="Back">Voltar</string>
 </resources>
