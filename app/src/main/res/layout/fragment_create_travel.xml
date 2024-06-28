@@ -106,6 +106,15 @@
                             style="@style/NoBorderTextInputEditText" />
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <TextView
+                        android:id="@+id/errorMessageName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginBottom="20dp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone" />
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/descriptionFieldLayout"
                         android:layout_width="300dp"
@@ -127,6 +136,15 @@
                             android:paddingStart="8dp"
                             style="@style/NoBorderTextInputEditText" />
                     </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/errorMessageDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginBottom="20dp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/dateFieldLayout"
@@ -152,6 +170,15 @@
                             style="@style/NoBorderTextInputEditText" />
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <TextView
+                        android:id="@+id/errorMessageDateInitial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginBottom="20dp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone" />
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/finaldateFieldLayout"
                         android:layout_width="300dp"
@@ -176,6 +203,15 @@
                             style="@style/NoBorderTextInputEditText" />
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <TextView
+                        android:id="@+id/errorMessageDateFinal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginBottom="20dp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone" />
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/localFieldLayout"
                         android:layout_width="300dp"
@@ -197,6 +233,14 @@
                             android:paddingStart="8dp"
                             style="@style/NoBorderTextInputEditText" />
                     </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/errorMessageCountry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-5dp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone" />
 
                     <!--<include
                         android:id="@+id/map"
