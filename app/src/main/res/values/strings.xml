@@ -53,4 +53,6 @@
     <string name="JoaoRocha" translatable="false">João Rocha</string>
     <string name="HugoGuedes" translatable="false">Hugo Guedes</string>
     <string name="Back">Back</string>
+    <string name="English">English</string>
+    <string name="Portuguese">Portuguese</string>
 </resources>

@@ -1,7 +1,9 @@
 package com.example.abouttravel
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -14,10 +16,14 @@ import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Load language from SharedPreferences
+        loadLocale()
 
         val prefs: SharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE)
         val isFirstRun = prefs.getBoolean("isFirstRun", true)
@@ -92,5 +98,15 @@ class MainActivity : AppCompatActivity() {
                 })
             }
         }
+    }
+
+    private fun loadLocale() {
+        val prefs = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+        val language = prefs.getString("language", "pt") ?: "pt"
+        val locale = Locale(language)
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.setLocale(locale)
+        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
     }
 }

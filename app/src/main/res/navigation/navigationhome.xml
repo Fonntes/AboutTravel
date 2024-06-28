@@ -114,6 +114,10 @@
         <action
             android:id="@+id/action_definitionFragment_to_aboutUsFragment"
             app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_definitionFragment_to_languageFragment3"
+            app:destination="@id/languageFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/aboutUsFragment"
@@ -122,6 +126,15 @@
         tools:layout="@layout/fragment_about_us" >
         <action
             android:id="@+id/action_aboutUsFragment_to_definitionFragment"
+            app:destination="@id/definitionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.example.abouttravel.pages.menus.LanguageFragment"
+        android:label="fragment_language"
+        tools:layout="@layout/fragment_language" >
+        <action
+            android:id="@+id/action_languageFragment_to_definitionFragment"
             app:destination="@id/definitionFragment" />
     </fragment>
 </navigation>

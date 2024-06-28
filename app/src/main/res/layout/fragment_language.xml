@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.menus.DefinitionFragment">
+    tools:context=".pages.menus.LanguageFragment">
 
     <include layout="@layout/background" />
 
@@ -58,48 +58,49 @@
             android:orientation="vertical"
             android:gravity="top|center">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="@string/Definition"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="top|center">
 
-            <Button
-                android:id="@+id/Sobrenos"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:backgroundTint="@color/grey"
-                android:text="@string/Sobrenos"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/language"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:backgroundTint="@color/grey"
-                android:text="@string/Language"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="-24dp"
+                    android:text="@string/Language"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/AssociatedAccount"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:backgroundTint="@color/grey"
-                android:text="@string/AssociatedAccount"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
 
+                <Button
+                    android:id="@+id/buttonen"
+                    android:layout_width="200dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="180dp"
+                    android:backgroundTint="@color/blue"
+                    android:text="@string/English"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/buttonpt"
+                    android:layout_width="200dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="32dp"
+                    android:backgroundTint="@color/blue"
+                    android:text="@string/Portuguese"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -109,12 +110,12 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/Logout"
+                android:id="@+id/back"
                 android:layout_width="200dp"
                 android:layout_height="56dp"
                 android:layout_marginTop="32dp"
-                android:backgroundTint="@color/red"
-                android:text="@string/Logout"
+                android:backgroundTint="@color/blue"
+                android:text="@string/Back"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
         </LinearLayout>
