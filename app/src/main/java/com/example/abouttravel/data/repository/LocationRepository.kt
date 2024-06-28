@@ -20,7 +20,7 @@ class LocationRepository(private val locationDao: LocationDao) {
         locationDao.deleteLocation(local)
     }
 
-    fun getLocationsForTrip(tripId: Int): List<Local> {
+    fun getLocationsForTrip(tripId: Int): LiveData<List<Local>> {
         return locationDao.getLocationsForTrip(tripId)
     }
 }

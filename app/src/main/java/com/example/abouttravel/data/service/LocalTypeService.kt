@@ -7,8 +7,8 @@ class LocalTypeService(private val localTypeRepository: LocalTypeRepository) {
 
     val allLocalTypes = localTypeRepository.allLocalTypes
 
-    suspend fun insert(localType: LocalType) {
-        localTypeRepository.insert(localType)
+    suspend fun insert(localType: LocalType): Long {
+        return localTypeRepository.insert(localType)
     }
 
     suspend fun update(localType: LocalType) {

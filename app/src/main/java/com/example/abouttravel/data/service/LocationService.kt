@@ -1,5 +1,6 @@
 package com.example.abouttravel.data.service
 
+import androidx.lifecycle.LiveData
 import com.example.abouttravel.data.entities.Local
 import com.example.abouttravel.data.repository.LocationRepository
 
@@ -19,7 +20,7 @@ class LocationService(private val locationRepository: LocationRepository) {
         locationRepository.delete(local)
     }
 
-    fun getLocationsForTrip(tripId: Int): List<Local> {
+    fun getLocationsForTrip(tripId: Int): LiveData<List<Local>> {
         return locationRepository.getLocationsForTrip(tripId)
     }
 }

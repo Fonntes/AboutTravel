@@ -22,8 +22,8 @@ class LocalTypeViewModel(application: Application) : AndroidViewModel(applicatio
         allLocalTypes = localTypeService.allLocalTypes
     }
 
-    fun insert(localType: LocalType) = viewModelScope.launch {
-        localTypeService.insert(localType)
+    suspend fun insert(localType: LocalType): Long {
+        return localTypeService.insert(localType)
     }
 
     fun update(localType: LocalType) = viewModelScope.launch {

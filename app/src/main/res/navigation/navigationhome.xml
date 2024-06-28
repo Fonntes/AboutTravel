@@ -81,6 +81,13 @@
         <action
             android:id="@+id/action_viewTravelFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_viewTravelFragment_to_createPlacesFragment"
+            app:destination="@id/createPlacesFragment">
+            <argument
+                android:name="trip"
+                app:argType="com.example.abouttravel.data.entities.Trip"/>
+        </action>
     </fragment>
     <fragment
         android:id="@+id/createTravelFragment"
@@ -96,6 +103,9 @@
         <action
             android:id="@+id/action_createTravelFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_createTravelFragment_to_createPlacesFragment2"
+            app:destination="@id/createPlacesFragment" />
     </fragment>
     <fragment
         android:id="@+id/definitionFragment"
@@ -137,4 +147,22 @@
             android:id="@+id/action_languageFragment_to_definitionFragment"
             app:destination="@id/definitionFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/createPlacesFragment"
+        android:name="com.example.abouttravel.pages.travel.CreatePlacesFragment"
+        android:label="CreatePlacesFragment" >
+        <argument
+            android:name="trip"
+            app:argType="com.example.abouttravel.data.entities.Trip"/>
+        <action
+            android:id="@+id/action_createPlacesFragment_to_shareFragment"
+            app:destination="@id/shareFragment" />
+        <action
+            android:id="@+id/action_createPlacesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_createPlacesFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
 </navigation>

@@ -1,34 +1,35 @@
 package com.example.abouttravel.pages.authentication
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.abouttravel.R
+import com.example.abouttravel.data.entities.LocalType
 import com.example.abouttravel.data.entities.Session
+import com.example.abouttravel.data.vm.LocalTypeViewModel
 import com.example.abouttravel.data.vm.SessionViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.Date
 
 class LoginFragment : Fragment() {
 
     private val sessionViewModel: SessionViewModel by viewModels()
+    private val localTypeViewModel: LocalTypeViewModel by viewModels()
     private lateinit var errorMessage: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val view = inflater.inflate(R.layout.fragment_login, container, false)
 
         val buttonToRegister = view.findViewById<TextView>(R.id.login_to_register)
@@ -60,12 +61,12 @@ class LoginFragment : Fragment() {
             return
         }
 
-        // Simulação de sucesso no login (você deve implementar a lógica real de login aqui)
         if (username == "User" && password == "Password") {
-            // Criar e salvar a sessão
-            // createAndSaveSession()
-
-            // Navegar para a próxima tela (homeActivity no exemplo)
+            Log.d("LoginFragment", "User credentials are valid, proceeding to create session")
+            //createAndSaveSession()
+            /*lifecycleScope.launch { // Using lifecycleScope for coroutine context
+                addDefaultLocalType()
+            }*/
             findNavController().navigate(R.id.action_loginFragment_to_homeActivity)
         } else {
             errorMessage.text = getString(R.string.invalid_credentials_error)
@@ -74,7 +75,6 @@ class LoginFragment : Fragment() {
     }
 
     private fun createAndSaveSession() {
-        // Criar uma sessão de exemplo (você pode ajustar conforme necessário)
         val testSession = Session(
             id = 1, // ID fixo para teste
             name = "Test User",
@@ -87,9 +87,31 @@ class LoginFragment : Fragment() {
             deleteAt = Date()
         )
 
-        // Salvar a sessão usando o ViewModel
-        CoroutineScope(Dispatchers.Main).launch {
-            sessionViewModel.insert(testSession)
+        Log.d("SessionCreation", "Attempting to insert session with ID: ${testSession.id}")
+        lifecycleScope.launch {
+            try {
+                val insertedId = sessionViewModel.insert(testSession)
+                Log.d("SessionCreation", "Session inserted with ID: $insertedId")
+            } catch (e: Exception) {
+                Log.e("SessionCreation", "Error inserting session", e)
+            }
+        }
+    }
+
+    private suspend fun addDefaultLocalType() {
+        val localType = LocalType(
+            label = "Restaurante",
+            description = "Local para comer",
+            createdAt = Date(),
+            updatedAt = Date()
+        )
+
+        Log.d("LocalTypeInsertion", "Attempting to insert local type with label: ${localType.label}")
+        try {
+            val insertedId = localTypeViewModel.insert(localType)
+            Log.d("LocalTypeInserted", "Inserted ID: $insertedId")
+        } catch (e: Exception) {
+            Log.e("LocalTypeInsertion", "Error inserting local type", e)
         }
     }
 }

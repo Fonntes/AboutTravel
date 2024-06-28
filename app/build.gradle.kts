@@ -104,7 +104,7 @@ dependencies {
     implementation ("androidx.navigation:navigation-ui-ktx:2.3.5")
 
 
-
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
     implementation ("com.squareup.picasso:picasso:2.71828")
 
 

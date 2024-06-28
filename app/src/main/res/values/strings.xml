@@ -42,9 +42,6 @@
     <string name="Welcome">Welcome</string>
     <string name="no_wifi">No conection</string>
     <string name="selected_item">Selected Item</string>
-    <string name="fill_fields_error">Please fill in all fields!</string>
-    <string name="invalid_credentials_error">Invalid credentials</string>
-    <string name="Select_Country">Select Country</string>
     <string name="date_error">The end date must be after the start date!</string>
     <string name="field_required">Required field!</string>
     <string name="AboutUs">About Us</string>
@@ -55,4 +52,8 @@
     <string name="Back">Back</string>
     <string name="English">English</string>
     <string name="Portuguese">Portuguese</string>
+    <string name="fill_fields_error" translatable="false">Please fill in all fields!</string>
+    <string name="invalid_credentials_error" translatable="false">Invalid credentials</string>
+    <string name="Select_Country" translatable="false">Select Country</string>
+    <string name="CreatePlaces">Add Place</string>
 </resources>

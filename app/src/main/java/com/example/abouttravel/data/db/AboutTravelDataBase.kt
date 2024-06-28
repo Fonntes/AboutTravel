@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.example.abouttravel.data.converters.Converters
 import com.example.abouttravel.data.dao.LocalTypeDao
 import com.example.abouttravel.data.dao.LocationDao
 import com.example.abouttravel.data.dao.MediaDao
@@ -22,8 +23,8 @@ import com.example.abouttravel.data.entities.UserLocalRatings
 import com.example.abouttravel.data.entities.UserTripRatings
 import com.example.abouttravel.data.entities.UserTripShared
 
-@Database(entities = [Trip::class, Local::class, LocalType::class, Media::class ,Session::class, UserTripShared::class, UserTripRatings::class, UserLocalRatings::class ], version = 4)
-@TypeConverters(Converters::class)
+@Database(entities = [Trip::class, Local::class, LocalType::class, Media::class, Session::class, UserTripShared::class, UserTripRatings::class, UserLocalRatings::class], version = 5)
+@TypeConverters(Converters::class) // Registrar o TypeConverter aqui
 abstract class AboutTravelDataBase : RoomDatabase() {
     abstract fun tripDao(): TripDao
     abstract fun locationDao(): LocationDao

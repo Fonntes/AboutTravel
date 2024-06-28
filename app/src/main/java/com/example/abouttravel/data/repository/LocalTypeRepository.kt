@@ -8,8 +8,8 @@ class LocalTypeRepository( private val localTypeDao: LocalTypeDao) {
 
     val allLocalTypes: LiveData<List<LocalType>> = localTypeDao.getAllLocalTypes()
 
-    suspend fun insert(localType: LocalType) {
-        localTypeDao.insertLocalType(localType)
+    suspend fun insert(localType: LocalType): Long {
+        return localTypeDao.insertLocalType(localType)
     }
 
     suspend fun update(localType: LocalType) {

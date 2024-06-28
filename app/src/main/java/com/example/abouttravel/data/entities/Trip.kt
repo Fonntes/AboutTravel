@@ -10,7 +10,8 @@ import kotlinx.parcelize.Parcelize
 import java.util.Date
 
 @Parcelize
-@Entity(tableName = "trips",
+@Entity(
+    tableName = "trips",
     foreignKeys = [
         ForeignKey(
             entity = Session::class,
@@ -20,8 +21,6 @@ import java.util.Date
         )
     ]
 )
-
-
 data class Trip(
     @PrimaryKey(autoGenerate = true) var id: Int = 0,
     @NonNull @ColumnInfo(name = "user_id") var userId: Int = 0,
@@ -37,5 +36,6 @@ data class Trip(
     @NonNull @ColumnInfo(name = "is_shared") var isShared: Boolean = false,
     @NonNull @ColumnInfo(name = "created_at") var createdAt: Date = Date(),
     @ColumnInfo(name = "deleted_at") var deleteAt: Date? = null,
-    @NonNull @ColumnInfo(name = "updated_at") var updatedAt: Date = Date()
+    @NonNull @ColumnInfo(name = "updated_at") var updatedAt: Date = Date(),
+    @ColumnInfo(name = "locals") var locals: List<Local> = emptyList()
 ) : Parcelable

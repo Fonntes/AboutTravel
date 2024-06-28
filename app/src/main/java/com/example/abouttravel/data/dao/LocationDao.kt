@@ -12,7 +12,7 @@ import com.example.abouttravel.data.entities.Local
 interface LocationDao {
 
     @Insert
-    suspend fun insertLocation(local: Local): Long
+    suspend fun insertLocation(local: Local)
 
     @Query("SELECT * FROM locations")
     fun getAllLocations(): LiveData<List<Local>>
@@ -27,5 +27,5 @@ interface LocationDao {
     suspend fun deleteLocation(local: Local)
 
     @Query("SELECT * FROM locations WHERE trip_id = :tripId")
-    fun getLocationsForTrip(tripId: Int): List<Local>
+    fun getLocationsForTrip(tripId: Int): LiveData<List<Local>>
 }
