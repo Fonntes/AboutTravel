@@ -62,9 +62,13 @@ class ViewTravelFragment : Fragment() {
         binding.profileImage1.setImageResource(R.drawable.profile)
         binding.tripTitle.text = trip.title
         binding.tripLocation.text = trip.location
+
         val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
-        val formattedDate = dateFormat.format(trip.initialdate)
-        binding.tripDate.text = formattedDate
+        val initialDate = dateFormat.format(trip.initialdate)
+        val endDate = dateFormat.format(trip.enddate)
+
+        binding.tripDate.text = "$initialDate"
+        binding.finalDate.text =  "$endDate"
         binding.tripDescription.text = trip.description
     }
 

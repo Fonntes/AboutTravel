@@ -10,10 +10,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.RatingBar
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -24,6 +22,7 @@ import com.example.abouttravel.data.entities.Trip
 import com.example.abouttravel.data.vm.SessionViewModel
 import com.example.abouttravel.data.vm.TripViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.textfield.TextInputEditText
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -36,8 +35,8 @@ class CreateTravelFragment : Fragment() {
     private lateinit var imageTrip: ImageView
     private val PICK_IMAGE_REQUEST = 1
     private var imageUri: Uri? = null
-    private lateinit var initialDateField: EditText
-    private lateinit var finalDateField: EditText
+    private lateinit var initialDateField: TextInputEditText
+    private lateinit var finalDateField: TextInputEditText
     private var calendar = Calendar.getInstance()
 
     override fun onCreateView(
@@ -104,9 +103,9 @@ class CreateTravelFragment : Fragment() {
     }
 
     private fun saveTrip(view: View) {
-        val nameField = view.findViewById<EditText>(R.id.nameField)
-        val descriptionField = view.findViewById<EditText>(R.id.descriptionField)
-        val localField = view.findViewById<TextView>(R.id.localField)
+        val nameField = view.findViewById<TextInputEditText>(R.id.nameField)
+        val descriptionField = view.findViewById<TextInputEditText>(R.id.descriptionField)
+        val localField = view.findViewById<TextInputEditText>(R.id.localField)
         val classificationField = view.findViewById<RatingBar>(R.id.classificationField)
 
         val title = nameField.text.toString()
@@ -153,7 +152,7 @@ class CreateTravelFragment : Fragment() {
         })
     }
 
-    private fun showDatePicker(editText: EditText) {
+    private fun showDatePicker(editText: TextInputEditText) {
         val datePickerDialog = DatePickerDialog(
             requireContext(),
             { _, year, month, dayOfMonth ->

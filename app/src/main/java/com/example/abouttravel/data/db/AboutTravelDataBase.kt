@@ -22,7 +22,7 @@ import com.example.abouttravel.data.entities.UserLocalRatings
 import com.example.abouttravel.data.entities.UserTripRatings
 import com.example.abouttravel.data.entities.UserTripShared
 
-@Database(entities = [Trip::class, Local::class, LocalType::class, Media::class ,Session::class, UserTripShared::class, UserTripRatings::class, UserLocalRatings::class ], version = 3)
+@Database(entities = [Trip::class, Local::class, LocalType::class, Media::class ,Session::class, UserTripShared::class, UserTripRatings::class, UserLocalRatings::class ], version = 4)
 @TypeConverters(Converters::class)
 abstract class AboutTravelDataBase : RoomDatabase() {
     abstract fun tripDao(): TripDao
