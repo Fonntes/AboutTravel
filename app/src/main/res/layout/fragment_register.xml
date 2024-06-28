@@ -49,6 +49,15 @@
             style="@style/NoBorderTextInputEditText" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/errorMessageName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-15dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:visibility="gone" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/usernameFieldLayout"
         android:layout_width="260dp"
@@ -71,6 +80,15 @@
             style="@style/NoBorderTextInputEditText" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/errorMessageUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-15dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:visibility="gone" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailFieldLayout"
         android:layout_width="260dp"
@@ -92,6 +110,15 @@
             android:paddingStart="8dp"
             style="@style/NoBorderTextInputEditText" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/errorMessagEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-15dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:visibility="gone" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordFieldLayout"
@@ -119,6 +146,14 @@
             style="@style/NoBorderTextInputEditText" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/errorMessagePasss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-15dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:visibility="gone" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/confirmPasswordFieldLayout"
@@ -147,7 +182,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/errorMessage"
+        android:id="@+id/errorMessageComfirmPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/holo_red_dark"

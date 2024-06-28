@@ -84,13 +84,13 @@
                 android:id="@+id/language"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="4dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/Language"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-            <Button
+            <!--<Button
                 android:id="@+id/AssociatedAccount"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                 android:backgroundTint="@color/grey"
                 android:text="@string/AssociatedAccount"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp" />-->
 
         </LinearLayout>
 
