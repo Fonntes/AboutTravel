@@ -34,4 +34,5 @@
     <string name="intro_3_text">Partilha com os teus amigos.</string>
     <string name="Welcome">Bem-Vindo</string>
     <string name="no_wifi">Sem conecção</string>
+    <string name="selected_item">Item Selecionado</string>
 </resources>

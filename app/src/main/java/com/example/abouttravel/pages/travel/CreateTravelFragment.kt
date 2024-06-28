@@ -106,14 +106,12 @@ class CreateTravelFragment : Fragment() {
         val nameField = view.findViewById<TextInputEditText>(R.id.nameField)
         val descriptionField = view.findViewById<TextInputEditText>(R.id.descriptionField)
         val localField = view.findViewById<TextInputEditText>(R.id.localField)
-        val classificationField = view.findViewById<RatingBar>(R.id.classificationField)
 
         val title = nameField.text.toString()
         val description = descriptionField.text.toString()
         val initialDateText = initialDateField.text.toString()
         val finalDateText = finalDateField.text.toString()
         val location = localField.text.toString()
-        val classification = classificationField.rating.toString()
         val image = imageUri?.toString() ?: ""
 
         val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())

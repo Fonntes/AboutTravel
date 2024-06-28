@@ -214,22 +214,10 @@
                         android:layout_marginTop="16dp"
                         android:layout_marginRight="80dp"
                         android:textColor="@color/black"
-                        android:text="@string/Classification"
+                        android:text="@string/AddImage"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-
-                    <RatingBar
-                        android:id="@+id/classificationField"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:numStars="5"
-                        android:stepSize="0.5"
-                        android:rating="0"
-                        android:layout_marginStart="8dp"
-                        android:textSize="20sp"
-                        android:progressTint="@color/gold" />
-
 
                     <ImageView
                         android:id="@+id/imageTrip"

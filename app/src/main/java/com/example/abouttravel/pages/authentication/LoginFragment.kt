@@ -22,6 +22,7 @@ import java.util.Date
 class LoginFragment : Fragment() {
 
     private val sessionViewModel: SessionViewModel by viewModels()
+    private lateinit var errorMessage: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +33,8 @@ class LoginFragment : Fragment() {
 
         val buttonToRegister = view.findViewById<TextView>(R.id.login_to_register)
         val buttonToHome = view.findViewById<Button>(R.id.buttonLoginToHome)
+
+        errorMessage = view.findViewById(R.id.errorMessage)
 
         buttonToRegister.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment2)
@@ -52,19 +55,21 @@ class LoginFragment : Fragment() {
         val password = passField.text.toString().trim()
 
         if (username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(context, "Por favor, preencha todos os campos!", Toast.LENGTH_SHORT).show()
+            errorMessage.text = getString(R.string.fill_fields_error)
+            errorMessage.visibility = View.VISIBLE
             return
         }
 
         // Simulação de sucesso no login (você deve implementar a lógica real de login aqui)
         if (username == "User" && password == "Password") {
             // Criar e salvar a sessão
-            //createAndSaveSession()
+            // createAndSaveSession()
 
             // Navegar para a próxima tela (homeActivity no exemplo)
             findNavController().navigate(R.id.action_loginFragment_to_homeActivity)
         } else {
-            Toast.makeText(context, "Credenciais inválidas!", Toast.LENGTH_SHORT).show()
+            errorMessage.text = getString(R.string.invalid_credentials_error)
+            errorMessage.visibility = View.VISIBLE
         }
     }
 
