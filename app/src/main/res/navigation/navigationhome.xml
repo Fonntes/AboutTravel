@@ -15,17 +15,21 @@
             app:destination="@id/profileFragment"
             />
         <action
-            android:id="@+id/action_homeFragment_to_viewTravelFragment2"
-            app:destination="@id/viewTravelFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_shareFragment"
             app:destination="@id/shareFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_createTravelFragment2"
-            app:destination="@id/createTravelFragment2" />
+            android:id="@+id/action_homeFragment_to_createTravelFragment"
+            app:destination="@id/createTravelFragment" />
         <action
             android:id="@+id/action_homeFragment_to_definitionFragment"
             app:destination="@id/definitionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewTravelFragment"
+            app:destination="@id/viewTravelFragment" >
+            <argument
+                android:name="trip"
+                app:argType="com.example.abouttravel.data.entities.Trip"/>
+        </action>
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -54,8 +58,8 @@
             android:id="@+id/action_shareFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
         <action
-            android:id="@+id/action_shareFragment_to_createTravelFragment2"
-            app:destination="@id/createTravelFragment2" />
+            android:id="@+id/action_shareFragment_to_createTravelFragment"
+            app:destination="@id/createTravelFragment" />
         <action
             android:id="@+id/action_shareFragment_to_viewTravelFragment"
             app:destination="@id/viewTravelFragment" />
@@ -65,6 +69,9 @@
         android:name="com.example.abouttravel.pages.travel.ViewTravelFragment"
         android:label="fragment_view_travel"
         tools:layout="@layout/fragment_view_travel" >
+        <argument
+            android:name="trip"
+            app:argType="com.example.abouttravel.data.entities.Trip"/>
         <action
             android:id="@+id/action_viewTravelFragment_to_shareFragment"
             app:destination="@id/shareFragment" />
@@ -76,18 +83,18 @@
             app:destination="@id/homeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/createTravelFragment2"
+        android:id="@+id/createTravelFragment"
         android:name="com.example.abouttravel.pages.travel.CreateTravelFragment"
         android:label="fragment_create_travel"
         tools:layout="@layout/fragment_create_travel" >
         <action
-            android:id="@+id/action_createTravelFragment2_to_shareFragment"
+            android:id="@+id/action_createTravelFragment_to_shareFragment"
             app:destination="@id/shareFragment" />
         <action
-            android:id="@+id/action_createTravelFragment2_to_homeFragment"
+            android:id="@+id/action_createTravelFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
         <action
-            android:id="@+id/action_createTravelFragment2_to_profileFragment"
+            android:id="@+id/action_createTravelFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
     </fragment>
     <fragment

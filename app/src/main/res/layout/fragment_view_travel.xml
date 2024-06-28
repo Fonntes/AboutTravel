@@ -48,19 +48,9 @@
                     android:src="@mipmap/logo_3_foreground"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/toolbar"
-                    app:layout_constraintStart_toEndOf="@+id/back"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
-
-                <ImageView
-                    android:id="@+id/back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:src="@drawable/back"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -83,7 +73,7 @@
                     android:id="@+id/profileImage1"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
-                    android:layout_marginTop="48dp"
+                    android:layout_marginTop="25dp"
                     android:backgroundTint="@color/blue"
                     android:background="@drawable/rounded_corners"/>
             </LinearLayout>
@@ -97,112 +87,80 @@
                 android:background="@color/white">
 
                 <TextView
+                    android:id="@+id/tripTitle"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="Portugal Viana"
-                    android:layout_marginTop="28dp"
+                    android:layout_marginTop="25dp"
                     android:textSize="32sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tripLocation"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="-12dp"
+                    android:layout_marginTop="5dp"
                     android:text="Viagem 1"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginTop="-12dp">
+                    android:gravity="left|center"
+                    android:layout_marginTop="5dp"
+                    tools:ignore="RtlHardcoded">
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.5"
-                        android:gravity="right|center"
-                        android:orientation="vertical">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/calendar" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="170dp"
-                            android:layout_height="40dp"
-                            android:gravity="left|center"
-                            android:text="19-02-2018"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/calendar"
+                        android:layout_marginStart="20dp"/>
+                    <TextView
+                        android:id="@+id/tripDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center"
+                        android:text="19-02-2018"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="left"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="-12dp">
+                    android:gravity="left|center"
+                    android:layout_marginTop="5dp"
+                    tools:ignore="RtlHardcoded">
 
-                    <LinearLayout
-                        android:layout_width="24dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/fakestar" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="24dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/fakestar" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="24dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/fakestar" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="24dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/fakestar" />
-                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/calendar"
+                        android:layout_marginStart="20dp"/>
+                    <TextView
+                        android:id="@+id/finalDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center"
+                        android:text="25-02-2018"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
+
+                <RatingBar
+                    android:id="@+id/classificationField"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:stepSize="0.5"
+                    android:layout_marginTop="5dp"
+                    android:progressTint="@color/gold"
+                    style="@style/Widget.AppCompat.RatingBar.Indicator" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -263,6 +221,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/tripDescription"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA"

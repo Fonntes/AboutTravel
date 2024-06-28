@@ -22,7 +22,7 @@ class ShareFragment : Fragment() {
         val add = view.findViewById<ImageView>(R.id.addTravel)
 
         add.setOnClickListener{
-            findNavController().navigate(R.id.action_shareFragment_to_createTravelFragment2)
+            findNavController().navigate(R.id.action_shareFragment_to_createTravelFragment)
         }
 
         val bottomNavigationView = view.findViewById<BottomNavigationView>(R.id.navbar)

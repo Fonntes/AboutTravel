@@ -17,7 +17,8 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        buildConfigField("String", "APP_URL", "\"http://10.0.2.2:59565/api/\"")
+        //buildConfigField("String", "APP_URL", "\"http://10.0.2.2:62536/api/\"")
+        buildConfigField("String", "APP_URL", "\"https://commov.riftweb.com/api/\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -55,6 +56,8 @@ android {
         }
     }
 }
+
+
 
 dependencies {
     implementation (libs.material.v130alpha03)
@@ -94,6 +97,10 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+
+    implementation ("com.google.android.material:material:1.3.0")
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.3.5")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.3.5")
 
 
 

@@ -50,15 +50,15 @@ class CreateTravelFragment : Fragment() {
         bottomNavigationView?.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> {
-                    findNavController().navigate(R.id.action_createTravelFragment2_to_homeFragment)
+                    findNavController().navigate(R.id.action_createTravelFragment_to_homeFragment)
                     true
                 }
                 R.id.share -> {
-                    findNavController().navigate(R.id.action_createTravelFragment2_to_shareFragment)
+                    findNavController().navigate(R.id.action_createTravelFragment_to_shareFragment)
                     true
                 }
                 R.id.profile -> {
-                    findNavController().navigate(R.id.action_createTravelFragment2_to_profileFragment)
+                    findNavController().navigate(R.id.action_createTravelFragment_to_profileFragment)
                     true
                 }
                 else -> false
@@ -149,7 +149,7 @@ class CreateTravelFragment : Fragment() {
             Log.d("CreateTravelFragment", "Inserting trip: $trip")
             tripViewModel.insert(trip)
             Toast.makeText(context, "Viagem salva com sucesso!", Toast.LENGTH_LONG).show()
-            findNavController().navigate(R.id.action_createTravelFragment2_to_homeFragment)
+            findNavController().navigate(R.id.action_createTravelFragment_to_homeFragment)
         })
     }
 
